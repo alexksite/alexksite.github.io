@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			
+			* {
+				margin: 0;
+			}
+		
+			html, body {height: 100%;}
+			
+			#wrap {
+			
+				min-height: 100%;
+			}
+			
+			#main {overflow:auto;
+				padding-bottom: 50px;}  /* must be same height as the footer */
+			
+			#footer {
+				background:	url("/images/bkg-footer1.png") repeat scroll 0 0 transparent;
+				position: relative;
+				margin-top: -50px; /* negative value of footer height */
+				height: 50px;
+				width: 945px;
+				margin-left: auto;
+    			margin-right: auto;
+				
+				clear:both;
+			
+			} 
+			
+			/*Opera Fix*/
+			body:before {
+				content:"";
+				height:100%;
+				float:left;
+				width:0;
+				margin-top:-32767px;/
+			}
+			
+
+			
+			
+			
+			/* Style */
+			/* IE8 hack to get it to apply margin auto centering to element inside this one */
+			#wrap {width:100%}
+			
+			
+			/* Content Area */
+#main {width:800px;margin:0 auto;clear:both;padding-right:10px;padding-left:10px}
+#main2 {width:800px;margin:0 auto;clear:both;padding-right:10px;padding-left:10px}
+
+#content {width:500px;float:left;padding:30px 0 25px 0}
+#content h1 {font-size:1.65em;margin:0;padding:0;color:#7A0A17;line-height:1.1em}
+#content h2 {font-size:1.2em;margin:15px 0 10px 0;color:#7A0A17}
+#content h3 {font-size:1.1em;font-weight:normal;margin:15px 0 10px 0;color:#7A0A17}
+
+#content pre {font-family:Verdana, Arial, sans-serif;margin:15px 0 15px 0;line-height:0.9em;font-size:0.9em;color:#010ACE}
+#content ul {list-style:square;margin:10px 0 10px 20px;list-style-position:inside}
+#content li {line-height:1.2em;font-size:0.9em}
+
+#content #list {width:200px;float:left}
+#content #screenshots {width:200px;float:right;padding-top:15px}
+#content #screenshots p {margin:5px 0 0 0;font-size:0.8em}
+			
+			
+			
+			
+			
+			
+						<!--[if !IE 7]>
+				<style type="text/css">
+					#wrap {display:table;height:100%}
+				</style>
+			<![endif]-->
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+		
+			<div id="main">
+		
+				<div id="content">
+		<h1>CSS Sticky Footer Layout</h1>
+			<h2>It Sticks to the Bottom of the Page!</h2>
+
+			<p>See that footer, way down there? It's stuck to the bottom of the page even when thin on content. Otherwise it would be <a href="http://www.cssstickyfooter.com/non-stick-footer.html" rel="nofollow">floating halfway up the page</a>.</p>
+
+			<h2>Cross Browser Support for Sticky Footer Code</h2>
+
+			<p>This sticky footer solution is working in all major browsers, <em>including Chrome and IE 8!</em> It works in HTML5 and with floated 2-column layouts and we don't get overlap in resized browser windows unlike older solutions 
+			you find when you Google <strong>sticky footer</strong>. You don't need an empty push div or cleafix hack. Here is <a href="http://www.cssstickyfooter.com/using-sticky-footer-code.html">how to use this sticky footer code</a>.</p>
+		
+				</div>
+		
+				<div id="side">
+		
+				</div>
+		
+			</div>
+		
+		</div>
+		
+		<div id="footer">
+			Alexander Koziy
+		</div>
+	</body>
+</html>

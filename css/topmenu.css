@@ -1,0 +1,30 @@
+#BJ_top2Menu {
+    float: left;
+    margin: 17px 10px 10px 0;
+    padding: 0 0 0 10px;
+    width: 485px;
+}
+
+
+#BJ_top2Menu ul {
+    float: right;
+    list-style: none outside none;
+}
+
+#BJ_top2Menu ul li {
+    float: left;
+}
+
+#BJ_top2Menu ul li a {
+    color: #3d464f;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#BJ_top2Menu ul li a:hover {
+	color:gray;
+	text-decoration: none;
+}

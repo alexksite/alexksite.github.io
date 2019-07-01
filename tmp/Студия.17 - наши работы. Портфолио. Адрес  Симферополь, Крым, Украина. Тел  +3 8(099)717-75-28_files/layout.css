@@ -1,0 +1,42 @@
+#site_center {text-align:center;}
+#main {width:750px; margin:26px auto 27px auto; text-align:left;}
+
+#header {height:199px; background:url(images/header_bgd.jpg) no-repeat left top;}
+#header, #content, #footer { font-size:0.75em;}
+
+.col_1, .col_2, .col_3, .column1, .column2, .column3 { float:left;}
+
+/*======= index.html =======*/
+#page1 #content .col_1 {width:417px;}
+#page1 #content .col_2 { width:333px;}
+
+/*======= index-2.html =======*/
+#page3 #content .col_1 {width:417px;}
+#page3 #content .col_2 { width:333px;}
+
+#page3 #content .col_1 .column1 { width:216px;}
+#page3 #content .col_1 .column2 { width:161px;}
+#page3 #content .col_2 .column1 { width:119px;}
+#page3 #content .col_2 .column2 { width:160px;}
+
+/*======= index-3.html =======*/
+#page4 #content .row_1 .column1 { width:122px;}
+#page4 #content .row_1 .column2 { width:170px;}
+
+#page4 #content .row_2 .column1 { width:389px;}
+#page4 #content .row_2 .column2 { width:321px;}
+
+/*======= index-4.html =======*/
+#page5 #content .col_1 {width:417px;}
+#page5 #content .col_2 { width:333px;}
+
+/*======= index-5.html =======*/
+#page6 #content .col_1 {width:417px;}
+#page6 #content .col_2 { width:333px;}
+
+#page6 #content .col_1 .column1 { width:210px;}
+#page6 #content .col_1 .column2 { width:171px;}
+/*=========================*/
+
+
+#footer {height:74px; background:url(images/footer_bgd1.gif) no-repeat left top;}

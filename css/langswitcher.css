@@ -1,0 +1,36 @@
+
+.cf:before, .cf:after {
+    content: "";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+}
+
+#lang {
+    float: right;
+    margin-top: 5px;
+}
+#lang li {
+    display: block;
+    float: left;
+    margin-right: 2px;
+}
+#lang li a {
+    color: #9C9EA7;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 300;
+    height: 26px;
+    line-height: 23px;
+    text-align: center;
+/*    width: 26px;*/
+}
+#lang li a:hover, #lang li a.current {
+ 
+/*    background-image: url('../images/lang-switcher/eng.png');*/
+    color: #005FA6;
+    /*text-decoration: none;*/
+}
