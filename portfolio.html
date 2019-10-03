@@ -868,7 +868,6 @@ ul#footer-lefttop li#quick-links ul a:hover {
 (function ($) {
   // привязываем обработку статистики к разметке сайта
   $('a.ga-stat').click(function (e) {
-	  alert('aaa');
     // как доп параметр я передаю значение внешнего url
     // обычно я обрабатываю ссылку, выделяя из неё только имя домена
     // но для упрощения примера не стал вставлять лишний код
@@ -877,12 +876,11 @@ ul#footer-lefttop li#quick-links ul a:hover {
 }) (jQuery);
 
 function ga_send(param) {
-	alert('');
 ga('send', {
   hitType: 'event',
   eventCategory: 'outbound',
   eventAction: 'click',
-  eventLabel: 'shortcut'
+  eventLabel: param
 });
 }
 
