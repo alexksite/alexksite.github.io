@@ -9,7 +9,7 @@
 		<link media="all" href="css/font.css" type="text/css" rel="stylesheet"/>
 		<link rel="stylesheet" media="screen" type="text/css" href="../css/topmenu.css"/>
 		<link rel="stylesheet" media="screen" type="text/css" href="../css/langswitcher.css"/>
-		
+		<script src="../jquery16/jquery-3.4.1.min.js"></script>
 	</head>
 	<body style="background:url('../images/backgroungs/2.png');	background-position:bottom top;font-family: 'Lucida Grande',Geneva,Arial,Verdana,sans-serif;" >
 
@@ -187,7 +187,7 @@
 			    <tr id="step-1" class="step">
 			    	<td>
 				   		<div class="recept_etaps_pics" style="padding:0;">
-				   			<a target="_blank" href="https://www.dynamicpublicsafety.com/">
+				   			<a target="_blank" href="https://www.dynamicpublicsafety.com/" class="ga-stat">
 				   				<img style="margin-bottom: 10px;" class="lazy imagecache imagecache-336x269 " src="../images/works/dps/1_logo.png" alt="Dynamic Public Safety" title="Dynamic Public Safety system" width="440"  />
 				   			</a>
 				   		</div>
@@ -201,7 +201,7 @@
 							<br/>
 							<p class="instructs" style="text-align:justify;">
 								Программное обеспечение для правоохранительных органов, разработанное с учетом уникальных требований и требований систем уголовного правосудия в США. Dynamic Public Safety - это не шаблонная система. Она была разработана с нуля, чтобы служить всему правоохранительному сообществу.
-								<a target="_blank" href="https://www.dynamicpublicsafety.com/">
+								<a target="_blank" href="https://www.dynamicpublicsafety.com/" class="ga-stat">
 									<img src="../images/view_details_ru.png" alt="View Project" style="float: right;margin-top:5px;margin-left:5px;" />
 								</a>
 							</p>
@@ -215,7 +215,7 @@
 			    	<td>
 			    		<hr style="color:#fdf4f4;"/>
 				   		<div class="recept_etaps_pics">
-				   			<a target="_blank" href="https://www.youtube.com/watch?v=6J2l4F3Ygaw">
+				   			<a target="_blank" href="https://www.youtube.com/watch?v=6J2l4F3Ygaw" class="ga-stat">
 				   				<img style="" class="lazy imagecache imagecache-336x269 " src="../images/works/ccs/1_logo.png" alt="CCS Contract Control Suite" title="CCS Contract Control Suite" width="440"  />
 				   			</a>
 				   		</div>
@@ -229,7 +229,7 @@
 							<br/>
 							<p class="instructs" style="text-align:justify;">
 								Система управления контрактами (CCS) упрощает работу с лизинговыми договорами.
-								<a target="_blank" href="https://www.youtube.com/watch?v=6J2l4F3Ygaw">
+								<a target="_blank" href="https://www.youtube.com/watch?v=6J2l4F3Ygaw" class="ga-stat">
 									<img src="../images/view_details_ru.png" alt="View Project" style="float: right;margin-top:5px;margin-left:5px;" />
 								</a>
 							</p>
@@ -243,7 +243,7 @@
 			    	<td>
 			    		<hr style="color:#fdf4f4;"/>
 				   		<div class="recept_etaps_pics">
-				   			<a target="_blank" href="https://www.dynamicinventory.net/">
+				   			<a target="_blank" href="https://www.dynamicinventory.net/" class="ga-stat">
 				   				<img style="" class="lazy imagecache imagecache-336x269 " src="../images/works/inventory/1_logo.png" alt="Dynamic Inventory system" title="Dynamic Inventory system" width="440"  />
 				   			</a>
 				   		</div>
@@ -257,7 +257,7 @@
 							<br/>
 							<p class="instructs" style="text-align:justify;">
 								Dynamic Inventory позволяет компаниям эффективно отслеживать свои запасы, продукты, поставщиков, покупки и продажи. 
-								<a target="_blank" href="https://www.dynamicinventory.net/">
+								<a target="_blank" href="https://www.dynamicinventory.net/" class="ga-stat">
 									<img src="../images/view_details_ru.png" alt="View Project" style="float: right;margin-top:5px;margin-left:5px;" />
 								</a>
 							</p>
@@ -863,6 +863,28 @@ ul#footer-lefttop li#quick-links ul a:hover {
 
   ga('create', 'UA-52763100-1', 'auto');
   ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+// привязываем обработку статистики к разметке сайта
+(function ($) {
+  // привязываем обработку статистики к разметке сайта
+  $('a.ga-stat').click(function (e) {
+    // как доп параметр я передаю значение внешнего url
+    // обычно я обрабатываю ссылку, выделяя из неё только имя домена
+    // но для упрощения примера не стал вставлять лишний код
+    ga_send($(this).attr('href'));
+  });
+}) (jQuery);
+
+function ga_send(param) {
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'outbound',
+  eventAction: 'click_ru',
+  eventLabel: param
+});
+}
 
 </script>
 	</body>
