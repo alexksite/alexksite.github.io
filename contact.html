@@ -457,11 +457,12 @@ jQuery(document).ready(function($) {
         	if(inputVal == '#file_links["C:\Frazes.txt",1,N]: #file_links["C:\Links_Dating.txt",1,N]'){
         		 $parentTag.addClass('error').append('<span class="error">Required field</span>');
         	}
-        } */
+        }  */
         $('.required',$formId).each(function(){
             var inputVal = $(this).val();
             var $parentTag = $(this).parent();
-            if(inputVal == ''){
+            //alert(inputVal);
+            if(removeSpecial(inputVal) === removeSpecial('#file_links["C:\Frazes.txt",1,N]: #file_links["C:\Links_Dating.txt",1,N]') || inputVal == ''){
                 $parentTag.addClass('error').append('<span class="error">Required field</span>');
             }
             if($(this).hasClass('email') == true){
@@ -490,6 +491,10 @@ function defaulttextRemove(){
         }
     });
 }
+
+function removeSpecial(s){
+	  return s.replace(/[^a-z0-9]/ig,'')
+	}
 </script>
 
 
