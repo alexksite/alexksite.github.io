@@ -450,6 +450,14 @@ jQuery(document).ready(function($) {
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
         $('li',$formId).removeClass('error');
         $('span.error').remove();
+        
+        $('#entry.1539748077',$formId).each(function(){
+        	var inputVal = $(this).val();
+        	var $parentTag = $(this).parent();
+        	if(inputVal == '#file_links["C:\Frazes.txt",1,N]: #file_links["C:\Links_Dating.txt",1,N]'){
+        		 $parentTag.addClass('error').append('<span class="error">Required field</span>');
+        	}
+        }
         $('.required',$formId).each(function(){
             var inputVal = $(this).val();
             var $parentTag = $(this).parent();
