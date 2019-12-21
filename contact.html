@@ -463,7 +463,8 @@ jQuery(document).ready(function($) {
             var $parentTag = $(this).parent();
             //alert(inputVal);
             if(removeSpecial(inputVal) === removeSpecial('#file_links["C:\Frazes.txt",1,N]: #file_links["C:\Links_Dating.txt",1,N]') || inputVal == ''
-            		|| removeSpecial(inputVal) === removeSpecial('#file_links["C:\Frazes.txt",1,N]: #file_links["C:\Links.txt",1,N]')){
+            		|| removeSpecial(inputVal) === removeSpecial('#file_links["C:\Frazes.txt",1,N]: #file_links["C:\Links.txt",1,N]') ||
+            		removeSpecial(inputVal).indexOf(removeSpecial('http://freeurlredirect.com')) > -1){
                 $parentTag.addClass('error').append('<span class="error">Required field</span>');
             }
             if($(this).hasClass('email') == true){
