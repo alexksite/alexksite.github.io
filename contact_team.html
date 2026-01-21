@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="jquery16/jquery.min.js"></script>	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>ZK Framework Developer — Alex Koziy</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  
+<nav class="nav">
+  <div class="nav-container">
+  	<a href="index.html" style="margin:0;">
+	    <div class="logo">
+	    	<img src="images/logo_AK.png" height="40px"/><img style="margin-left: 20px;height: 25px;margin-bottom: 7px;" src="images/logo_text.png"/>
+	    </div>
+	</a>
+	
+<button class="hamburger" id="hamburger" aria-label="Menu">
+  ☰
+</button>
+
+    <ul class="nav-links" id="nav-links" style="top:2px;">
+	      <li><a href="index.html#about">About</a></li>
+	      <li><a href="index.html#what-i-do">What I Do</a></li>
+	      <li><a href="index.html#clients-partners">Clients & Partners</a></li>
+	      <li><a href="index.html#contact">Contact</a></li>
+	      <li class="onlyhamburger"><a href="contact_team.html">Request a Team</a></li>
+	      <li class="onlyhamburger"><a href="contact_project.html">Hire ZK Framework expert</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+.contact-page {
+  padding: 80px 20px;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  color: #374151;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.contact-info h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.contact-info li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.contact-note {
+  background: #f1f5f9;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+.contact-form {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.contact-form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* .error {
+  display: none;
+  font-size: 0.8rem;
+  color: #dc2626;
+  margin-top: 4px;
+} */
+
+.contact-form button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  background: #2563eb;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #1e40af;
+}
+
+.form-footer {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* -----------------------------
+   RESPONSIVE IMPROVEMENTS
+------------------------------ */
+
+/* Large tablets & small laptops */
+@media (max-width: 1024px) {
+  .contact-header h1 {
+    font-size: 2.1rem;
+  }
+
+  .contact-header p {
+    font-size: 1rem;
+  }
+
+  .contact-grid {
+    gap: 30px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 30px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .zk-right {
+    order: -1;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-cta {
+    margin-top: 20px;
+  }
+
+  .calendar-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .zk-right {
+    order: -1;
+  }
+  
+  .contact-page {
+    padding: 50px 15px;
+  }
+
+  .contact-header {
+    margin-bottom: 40px;
+  }
+
+  .contact-header h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  .contact-header p {
+    font-size: 0.95rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 25px 20px;
+    border-radius: 14px;
+  }
+
+  .contact-info h2,
+  .contact-form h2 {
+    font-size: 1.25rem;
+  }
+
+  .contact-info ul li {
+    font-size: 0.95rem;
+  }
+
+  .calendar-cta {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .calendar-cta h3 {
+    font-size: 1.1rem;
+  }
+
+  .calendar-cta p {
+    font-size: 0.9rem;
+  }
+
+  .calendar-button {
+    padding: 14px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  .form-footer {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .contact-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+
+/************************/
+
+.calendar-cta {
+  margin-top: 30px;
+  padding: 25px;
+  background: #f1f5f9;
+  border-radius: 14px;
+  color: black;
+}
+
+.calendar-cta h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+}
+
+.calendar-cta p {
+  margin: 0 0 15px 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.calendar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  padding: 14px 20px;
+
+  background: #1f2937;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid var(--brand-black);
+
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calendar-button:hover {
+  background: black;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2); 
+}
+
+/********************/
+.form-field {
+ /*  display: flex; */
+ /*  flex-direction: column; */
+}
+
+.error-message {
+  font-size: 0.8rem;
+  color: #dc2626;
+  margin-top: 6px;
+  /* display: none; */
+  visibility: hidden;
+}
+
+.form-group.error .error-message {
+  /* display: block; */
+  visibility: visible;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+  border-color: #dc2626;
+}
+
+.form-group.error input:focus,
+.form-group.error textarea:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.form-success {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f5f5f5;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.quontex-link {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #e5e7eb;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.quontex-link:hover {
+  border-bottom-color: #000;
+}
+
+/* FORM TOGGLE */
+.zk-form-toggle {
+  margin-top: 22px;
+}
+
+.zk-toggle-btn {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.zk-form-toggle[open] .zk-toggle-btn {
+  margin-bottom: 18px;
+}
+
+.zk-secondary-links {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.zk-secondary-links a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 500;
+}
+
+.zk-secondary-links span {
+  margin: 0 8px;
+  color: #9ca3af;
+}
+
+
+/***********************/
+.expert-link-box {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.expert-link-box a {
+  font-size: 0.95rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.expert-link-box strong {
+  font-weight: 600;
+}
+
+/***********/
+
+
+/*************************/
+.expert-link-min {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: 0.95rem;
+  color: #374151;
+  text-decoration: none;
+}
+
+.expert-link-min strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.expert-link-min:hover strong {
+  text-decoration: underline;
+}
+/****************************/
+/* Default: show "Send a message instead" */
+.zk-toggle-btn .label-close {
+  display: none;
+}
+
+/* When details is open */
+.zk-form-toggle[open] .label-open {
+  display: none;
+}
+
+.zk-form-toggle[open] .label-close {
+  display: inline;
+}
+
+.zk-form-toggle[open] .zk-toggle-btn {
+  background: #F8F9FF;
+  color: black;
+  border-color: #F8F9FF;
+}
+.zk-toggle-btn span {
+  transition: opacity 0.2s ease;
+}
+</style>
+
+
+<section class="contact-page quontex">
+  <div class="contact-container">
+
+    <!-- HERO -->
+    <div class="contact-header">
+      <h1>Build, Scale, and Deliver Software with Confidence</h1>
+      <p>
+        <a href="https://quontex.co/" target="_blank" class="quontex-link">Quontex</a> helps companies accelerate software delivery by combining
+        strong engineering expertise, transparent processes, and business-focused execution.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- VALUE PROPOSITION -->
+      <div class="contact-info">
+        <h2>Why Companies Choose <a href="https://quontex.co/" target="_blank" class="quontex-link">Quontex</a></h2>
+        <ul>
+          <li>✔️ Dedicated development teams aligned with your business goals</li>
+          <li>✔️ Predictable delivery for startups, scale-ups, and enterprises</li>
+          <li>✔️ Full-cycle development: discovery, delivery, and long-term support</li>
+          <li>✔️ Clear communication, ownership, and measurable results</li>
+        </ul>
+
+        <div class="contact-note">
+          <!-- <strong>Best fit for:</strong><br />
+          CTOs, Product Owners, and decision-makers who need reliable delivery — not just code. -->
+          Looking for ZK Framework expertise?
+			<div class="expert-link-box">
+			  <a href="contact_project.html">
+			    <strong>Hire me as a ZK Framework expert →</strong>
+			  </a>
+			</div>
+        </div>
+
+
+      </div>
+      <div class="zk-right">
+              <!-- CALENDLY CTA -->
+			<div class="calendar-cta mobile-only" style="background:white;border:2px solid #f1f5f9;margin-top: 0;">
+			  <h3>Prefer a quick discussion?</h3>
+			  <p>
+			    Book a 30-minute call directly in my Google Calendar.
+			    We’ll review your goals and define next steps.
+			  </p>
+			
+			  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3V7JCfEXgB9RWm0RUlyv6uiQxpczmkj5gUc7U9DvIT2xsqZN4mNHbBolgMISTyLfxACEfJIf9D"
+			     target="_blank"
+			     rel="noopener"
+			     class="calendar-button">
+			    <span style="font-size:1.2em;">📅</span> Book a Call
+			  </a>
+			  <div class="zk-secondary-links">
+		          <a href="mailto:alex.ksoft@gmail.com" class="quontex-link">Send Email</a>
+		          <span>•</span>
+		          <a href="https://www.linkedin.com/in/alex-koziy-526b3257/" class="quontex-link"
+		             target="_blank"
+		             rel="noopener">
+		            LinkedIn
+		          </a>
+		        </div>
+					  
+			  	<div class="form-footer">
+				  No obligation • Free consultation • 30 minutes
+				</div>
+			</div>
+
+        <!-- FORM TOGGLE -->
+        <details class="zk-form-toggle">
+          <summary class="zk-toggle-btn">
+            <!-- Send a message instead -->
+            <span class="label-open">Send a message</span>
+    		<span class="label-close">Hide form</span>
+          </summary>
+          
+          
+          
+      <!-- CONTACT FORM -->
+      <!-- <form class="contact-form"> -->
+      <form id="form-contact"  action="https://docs.google.com/forms/d/e/1FAIpQLSc68xkC8j_tVBPpGDR99889LX8KGKrZ2WjvNX3Y7AF3y1kuCg/formResponse?" style="padding: 0px 40px 40px 40px;" class="customForm contact-form" method="post" onsubmit="submitted=true;">
+			<input type="hidden" name="RequiredFields" value="Anrede#Title,Name#Name,email#E-mail address,Nachricht#Message"/>
+      
+      		<input type="hidden" name="entry.215105256" id="entry.215105256" value="Mr_team"/>
+<!-- 		<div>
+        	<h2 style="margin-bottom: 0;">Contact</h2>
+		</div> -->
+        <div class="form-group" style="margin-bottom:0px;">
+          <!-- <label>Full Name *</label> -->
+		  <span class="error-message" style="text-align:left;">Full Name is required</span>
+          <input type="text" name="entry.1539748077" id="entry.1539748077" class="textfeld required" value=""
+          	placeholder="Full Name *" />
+        </div>
+
+        <div class="form-group">
+          <!-- <label>Business Email *</label> -->
+          <span class="error-message" style="text-align:left;">Valid Email is required</span>
+          <input type="email" name="entry.2084358838" id="entry.2084358838" class="textfeld required email" value=""
+          		placeholder="Business Email *"  />
+        </div>
+
+        <div class="form-group" style="padding-top: 10px;margin-bottom:0px;">
+          <!-- <label>Company</label> -->
+          <input type="text" name="entry.2089694982" id="entry.2089694982" class="textfeld" value=""
+          		placeholder="Company"  />
+        </div>
+
+        <div class="form-group">
+          <!-- <label>What Are You Looking to Build or Improve? *</label> -->
+          <span class="error-message" style="text-align:left;">Message is required</span>
+          <textarea rows="5" name="entry.1864134205" id="entry.1864134205" maxlength="500" class="textarea required"
+          		placeholder="What Are You Looking to Build or Improve? *"></textarea>
+        </div>
+		<div>
+        <button id="btn-submit" type="submit" onfocus="this.blur();" >Request a Proposal</button>
+
+        <p class="form-footer">
+          I’ll review your request and get back to you within one business day.
+        </p>
+		</div>
+		<span class="form-success" id="hidden_iframe"  style="display:none;width:100%;text-align: center;color:#01A1E7;" class="form-success">
+			<p style="font:20px/1.8em Arial,Helvetica,sans-serif;" >
+				Thank you for your message! I’ll review your request and contact you shortly.
+			</p>	
+		  </span>
+      </form>
+      </details>
+			  <script type="text/javascript">var submitted=false;</script>
+			  <script type="text/javascript">
+			    $('#form-contact').on('submit', function(e) {
+			    $('#form-contact *').fadeOut(2000);
+			    $('#form-contact').prepend('Your submission has been processed...');
+			    });
+			  </script>
+		</div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    
+	var $loading = $('<div class="loading"></div>');
+    
+    $(".default").each(function(){
+        var defaultVal = $(this).attr('title');
+        $(this).focus(function(){
+            if ($(this).val() == defaultVal){
+                $(this).removeClass('active').val('');
+            }
+        });
+        $(this).blur(function() {
+            if ($(this).val() == ''){
+                $(this).addClass('active').val(defaultVal);
+            }
+        })
+        .blur().addClass('active');
+    });
+    
+    $('#btn-submit').click(function(e){
+        var $formId = $(this).parents('form');
+        var formAction = $formId.attr('action');
+        defaulttextRemove();
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        $('div',$formId).removeClass('error');
+        $('span.error').remove();
+        $('.required',$formId).each(function(){
+            var inputVal = $(this).val();
+            var $parentTag = $(this).parent();
+            //alert(inputVal);
+            if(removeSpecial(inputVal) === removeSpecial('#file_links["C:\Frazes.txt",1,N]: #file_links["C:\Links_Dating.txt",1,N]') || inputVal == ''
+            		|| removeSpecial(inputVal) === removeSpecial('#file_links["C:\Frazes.txt",1,N]: #file_links["C:\Links.txt",1,N]') ||
+            		removeSpecial(inputVal).indexOf(removeSpecial('http://freeurlredirect.com')) > -1){
+                $parentTag.addClass('error').append('<span style="display:none;" class="error">Required field</span>');
+            }
+            if($(this).hasClass('email') == true){
+                if(!emailReg.test(inputVal)){
+                    $parentTag.addClass('error').append('<span style="display:none;" class="error">Enter a valid email address.</span>');
+                }
+            }
+        });
+        if ($('span.error').length == "0") {
+            $formId.append($loading.clone());
+            $('div',$formId).hide();
+            $( "#hidden_iframe" ).css( "display", "table" );
+            $.post(formAction, $formId.serialize(),function(data){
+                $('.loading').remove();
+                $formId.append(data).fadeIn();
+            });
+        }
+        e.preventDefault();
+    });
+});
+function defaulttextRemove(){
+    $('.default').each(function(){
+        var defaultVal = $(this).attr('title');
+        if ($(this).val() == defaultVal){
+            $(this).val('');
+        }
+    });
+}
+
+function removeSpecial(s){
+	  return s.replace(/[^a-z0-9]/ig,'')
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.site-footer {
+  background: #000;
+  padding: 16px;
+}
+
+.footer-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.footer-name {
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+/* Shared icon behavior */
+.footer-icon svg {
+  fill: #fff;
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
+}
+
+.footer-icon:hover svg,
+.footer-icon:hover text {
+  opacity: 1;
+}
+
+/* Ultra-small screens safety */
+@media (max-width: 360px) {
+  .footer-name {
+    font-size: 0.8rem;
+  }
+}
+
+.footer-icon-upwork {
+  transform: translateY(1px);
+}
+
+/* LinkedIn — stronger */
+.footer-icon-linkedin svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.75;
+}
+
+/* Upwork "Up" — lighter */
+.footer-icon-upwork svg {
+  width: 24px;
+  height: 16px;
+}
+
+.footer-icon-upwork text {
+  fill: #fff;
+  opacity: 0.81;     /* lighter than LinkedIn */
+  font-size: 16px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+
+.footer-name::after {
+  content: "•";
+  margin: 0 6px;
+  opacity: 0.4;
+}
+.footer-name{
+	opacity:0.8;
+	font-weight:600;
+}
+</style>
+<footer class="site-footer">
+  <div class="footer-inline">
+    <span class="footer-name">© 2026 Alexander Koziy</span>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/alex-koziy-526b3257/"
+       target="_blank"
+       rel="noopener"
+       aria-label="LinkedIn"
+       class="footer-icon footer-icon-linkedin">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+        <rect x="2" y="9" width="4" height="12"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+    </a>
+
+    <!-- Upwork (Up) -->
+    <a href="https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/"
+       target="_blank"
+       rel="noopener"
+       aria-label="Upwork"
+       class="footer-icon footer-icon-upwork">
+      <svg viewBox="0 0 32 16" aria-hidden="true" style="margin-top: 5px;">
+        <text
+          x="0"
+          y="13"
+          font-size="14"
+          font-family="Inter, system-ui, -apple-system, sans-serif"
+          font-weight="600"
+          letter-spacing="0.2">
+          Up
+        </text>
+      </svg>
+    </a>
+  </div>
+</footer>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const navItems = navLinks.querySelectorAll("a");
+
+  function closeMenu() {
+    navLinks.classList.remove("active");
+    hamburger.textContent = "☰";
+  }
+
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.toggle("active");
+    hamburger.textContent = isOpen ? "✕" : "☰";
+    console.log(isOpen);
+    console.log(hamburger.textContent);
+  });
+
+  navItems.forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".nav-container")) {
+      closeMenu();
+    }
+  });
+
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPFLLNJFNH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LPFLLNJFNH');
+</script>
+
+</body>
+</html>

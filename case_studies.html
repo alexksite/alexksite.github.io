@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="jquery16/jquery.min.js"></script>	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>ZK Framework Developer — Alex Koziy</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  
+<nav class="nav">
+  <div class="nav-container">
+  	<a href="index.html" style="margin:0;">
+	    <div class="logo">
+	    	<img src="images/logo_AK.png" height="40px"/><img style="margin-left: 20px;height: 25px;margin-bottom: 7px;" src="images/logo_text.png"/>
+	    </div>
+	</a>
+	
+<button class="hamburger" id="hamburger" aria-label="Menu">
+  ☰
+</button>
+
+    <ul class="nav-links" id="nav-links" style="top:2px;">
+	      <li><a href="index.html#about">About</a></li>
+	      <li><a href="index.html#what-i-do">What I Do</a></li>
+	      <li><a href="index.html#clients-partners">Clients & Partners</a></li>
+	      <li><a href="index.html#contact">Contact</a></li>
+	      <li class="onlyhamburger"><a href="contact_team.html">Request a Team</a></li>
+	      <li class="onlyhamburger"><a href="contact_project.html">Hire ZK Framework expert</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<style>
+
+.case-studies {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.case-studies h1 {
+  font-size: 28px;
+  font-weight: 600;
+  /* margin-bottom: 50px; */
+}
+
+.case {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 40px;
+  padding: 45px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.case:last-child {
+  border-bottom: none;
+}
+
+.case-image img {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  background: #fafafa;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.case-image img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+.case-content h2 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.tags {
+  margin-bottom: 10px;
+}
+
+.tags span {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 8px;
+  margin-right: 6px;
+  border-radius: 4px;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.tech {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.highlights {
+  list-style: none;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.highlights li {
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.toggle {
+  font-size: 13px;
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggle:hover {
+  text-decoration: underline;
+}
+
+.details {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.details.open {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .case {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+<section class="case-studies">
+  <h1>Case Studies</h1>
+    <!-- CASE -->
+  <article class="case">
+    <div class="case-image">
+    	<a href="https://www.stratifytech.com/" target="_blank" rel="noopener">
+      		<img src="images/works/stratify/demo.png" alt="Financial Planning & Analysis">
+      	</a>
+    </div>
+
+    <div class="case-content">
+      <h2>Financial Planning & Analysis</h2>
+
+      <div class="tags">
+        <span>Finance</span>
+        <span>Enterprise</span>
+        <span>Analytics</span>
+      </div>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Spring Boot, ZK Framework, Keikai, AWS
+      </p>
+
+      <ul class="highlights">
+        <li><strong>Impact:</strong> Integrated Keikai to enable custom reporting and streamline financial analysis.</li>
+        <li><strong>Users:</strong> Enterprise and public-sector organizations across the USA</li>
+      </ul>
+
+      <p class="description">
+        This platform consolidates complex financial and operational data, helping organizations make confident, data-driven 
+        decisions. Users can generate custom reports, visualize trends, and gain clarity across multiple business units.
+      </p>
+
+      <button class="toggle">More details</button>
+
+      <div class="details">
+      <style>
+.features-section {
+/*   background-color: #f9f9f9;
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 20px auto;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); */
+}
+
+.features-section h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #111827; /* dark text color */
+}
+
+.features-list {
+  list-style: inside;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.features-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  /* font-size: 1rem; */
+  line-height: 1;
+  color: #374151; /* medium-dark gray */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+</style>
+        <p>
+			<div class="features-section">
+			  <p>The system empowers managers and analysts to:</p>
+			  <ul class="features-list">
+			    <li>Quickly consolidate and analyze financial and operational data</li>
+			    <li>Generate custom reports tailored to business needs</li>
+			    <li>Collaborate across departments with a single, unified platform</li>
+			    <li>Reduce errors and improve reporting clarity</li>
+			  </ul>
+			</div>
+        </p>
+      </div>
+    </div>
+  </article>
+  
+  
+  
+
+  <!-- CASE -->
+  <article class="case">
+    <div class="case-image">
+    	<a href="https://www.linkedin.com/company/dynamic-public-safety/" target="_blank" rel="noopener">
+	      <img src="images/works/dps/1_full.jpg" alt="Dynamic Public Safety">
+	    </a>
+    </div>
+
+    <div class="case-content">
+      <h2>Dynamic Public Safety</h2>
+
+      <div class="tags">
+        <span>Government</span>
+        <span>Enterprise</span>
+        <span>High-Load</span>
+      </div>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Java, ZK Framework, MySQL, Hibernate, Tomcat
+      </p>
+
+      <ul class="highlights">
+        <li><strong>Impact:</strong> Improved UI responsiveness and scalability for statewide deployments</li>
+        <li><strong>Users:</strong> Law enforcement agencies across the USA</li>
+      </ul>
+
+      <p class="description">
+        Law Enforcement Software built from the ground up to support complex criminal
+        justice workflows. Designed for reliability, security, and long-term scalability.
+      </p>
+
+      <button class="toggle">More details</button>
+
+      <div class="details">
+        <p>
+          The system supports case management, reporting, and data exchange between
+          multiple agencies. Special attention was paid to performance optimization,
+          reusable ZK components, and legacy module modernization.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASE -->
+  <article class="case">
+    <div class="case-image">
+    	<a href="https://www.youtube.com/watch?v=6J2l4F3Ygaw" target="_blank" rel="noopener">
+      		<img src="images/works/ccs/1_full.png" alt="CCS Contract Control Suite">
+      	</a>
+    </div>
+
+    <div class="case-content">
+      <h2>CCS Contract Control Suite</h2>
+
+      <div class="tags">
+        <span>Enterprise</span>
+        <span>Finance</span>
+      </div>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Java, ZK Framework, SQL Server, Hibernate, Tomcat
+      </p>
+
+      <ul class="highlights">
+        <li><strong>Impact:</strong> Increased contract transparency and reduced manual errors</li>
+        <li><strong>Scope:</strong> Multi-department enterprise usage</li>
+      </ul>
+
+      <p class="description">
+        Contract management system that centralizes lease agreements, approvals,
+        document storage, and audit trails.
+      </p>
+
+      <button class="toggle">More details</button>
+
+      <div class="details">
+        <p>
+          Implemented document previews, approval workflows, and fine-grained access
+          control. Focused on maintainability and extensibility for long-term use.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASE -->
+  <article class="case">
+    <div class="case-image">
+    	<a href="https://www.dynamicinventory.net/" target="_blank" rel="noopener">
+      		<img src="images/works/inventory/1_full.jpg" alt="Dynamic Inventory">
+      	</a>
+    </div>
+
+    <div class="case-content">
+      <h2>Dynamic Inventory</h2>
+
+      <div class="tags">
+        <span>E-commerce</span>
+        <span>ERP</span>
+      </div>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Java, ZK Framework, MySQL, Hibernate, Tomcat
+      </p>
+
+      <ul class="highlights">
+        <li><strong>Impact:</strong> Real-time stock visibility across departments</li>
+        <li><strong>Integrations:</strong> Vendors, purchases, sales</li>
+      </ul>
+
+      <p class="description">
+        Inventory system enabling companies to track products, suppliers, purchases,
+        and sales from a single interface.
+      </p>
+
+      <button class="toggle">More details</button>
+
+      <div class="details">
+        <p>
+          Delivered reusable ZK UI components, optimized database queries, and ensured
+          consistent UX across large datasets.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASE -->
+  <article class="case">
+    <div class="case-image">
+      <img src="images/works/energomonitoring/new/heatsupplier_add.png" alt="Energy Management System">
+    </div>
+
+    <div class="case-content">
+      <h2>Energy Management & Control System</h2>
+
+      <div class="tags">
+        <span>Industrial</span>
+        <span>Analytics</span>
+      </div>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Java, ZK Framework, MySQL, Hibernate, Tomcat<br>
+      </p>
+
+      <ul class="highlights">
+        <li><strong>Impact:</strong> Enabled data-driven energy optimization</li>
+        <li><strong>Data:</strong> Real-time consumption analytics</li>
+      </ul>
+
+      <p class="description">
+        System for collecting, processing, and visualizing energy consumption data
+        to support management decision-making.
+      </p>
+
+      <button class="toggle">More details</button>
+
+      <div class="details">
+        <p>
+          Built dashboards and reporting tools that helped enterprises identify
+          inefficiencies and reduce operational costs.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Case 1 -->
+  <article class="case">
+    <div class="case-image">
+      <img src="images/works/map/map_thumb.png" alt="Interactive Transportation Map">
+    </div>
+
+    <div class="case-content">
+      <h2>Interactive Map for Transportation Company</h2>
+
+      <div class="tags">
+        <span>Transportation</span>
+        <span>Real-Time</span>
+        <span>GIS</span>
+      </div>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Java, ZK Framework, OpenLayers, PostgreSQL/PostGIS, Tomcat<br>
+      </p>
+      <ul class="highlights">
+	     <li><strong>Impact:</strong> Improved fleet visibility and operational control</li>
+	     <!-- <li><strong>Use case:</strong> Live tracking and route analysis</li> -->
+	  </ul>
+	  
+      <p class="description">
+        A real-time vehicle tracking solution that visualizes live locations and historical
+        routes on an interactive map, enabling transportation companies to monitor fleet
+        activity efficiently.
+      </p>
+
+      <!-- <button class="toggle">More details</button> -->
+
+    </div>
+  </article>
+
+  <!-- Case 2 -->
+  <article class="case">
+    <div class="case-image">
+      <img src="images/works/realestate/new/realtor_logo.png" alt="Real Estate Management System">
+    </div>
+
+    <div class="case-content">
+      <h2>Management System for Real Estate Agencies</h2>
+
+      <div class="tags">
+        <span>Real Estate</span>
+        <span>CRM</span>
+        <span>Enterprise</span>
+      </div>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Java, ZK Framework, MySQL, Hibernate, Tomcat<br>
+      </p>
+      <ul class="highlights">
+        <li><strong>Impact:</strong> Centralized client and property management</li>
+        <!-- <li><strong>Coverage:</strong> Leads, properties, clients, reporting</li> -->
+	  </ul>
+
+      <p class="description">
+        A comprehensive management platform helping real estate agencies manage leads,
+        properties, clients, appointments, and reporting in a single system.
+      </p>
+
+      <!-- <button class="toggle">More details</button> -->
+    </div>
+  </article>
+
+  <!-- Case 3 -->
+  <article class="case">
+    <div class="case-image">
+      <img src="images/works/oseria/new/oseria_logo.png" alt="Adempiere Compiere Integration">
+    </div>
+
+    <div class="case-content">
+      <h2>Adempiere WebUI Integration with Compiere</h2>
+
+      <div class="tags">
+        <span>ERP</span>
+        <span>Integration</span>
+        <span>Enterprise</span>
+      </div>
+
+      <p class="tech">
+        <strong>Technologies:</strong> Java, ZK Framework, Oracle, JBoss, Compiere, Adempiere<br>
+      </p>
+
+      <ul class="highlights">
+        <li><strong>Impact:</strong> Expanded ERP functionality without system replacement</li>
+        <!-- <li><strong>Outcome:</strong> Unified, more powerful enterprise platform</li> -->
+      </ul>
+      
+      <p class="description">
+        Integration of Adempiere WebUI with Compiere to create a unified ERP solution
+        offering extended functionality beyond the capabilities of each system individually.
+      </p>
+
+      <!-- <button class="toggle">More details</button> -->
+      
+    </div>
+  </article>
+  
+</section>
+
+<script>
+  document.querySelectorAll(".toggle").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const details = btn.nextElementSibling;
+      details.classList.toggle("open");
+      btn.textContent = details.classList.contains("open")
+        ? "Hide details"
+        : "More details";
+    });
+  });
+</script>
+
+<style>
+.site-footer {
+  background: #000;
+  padding: 16px;
+}
+
+.footer-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.footer-name {
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+/* Shared icon behavior */
+.footer-icon svg {
+  fill: #fff;
+  opacity: 0.95;
+  transition: opacity 0.2s ease;
+}
+
+.footer-icon:hover svg,
+.footer-icon:hover text {
+  opacity: 1;
+}
+
+/* Ultra-small screens safety */
+@media (max-width: 360px) {
+  .footer-name {
+    font-size: 0.8rem;
+  }
+}
+
+.footer-icon-upwork {
+  transform: translateY(1px);
+}
+
+/* LinkedIn — stronger */
+.footer-icon-linkedin svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.75;
+}
+
+/* Upwork "Up" — lighter */
+.footer-icon-upwork svg {
+  width: 24px;
+  height: 16px;
+}
+
+.footer-icon-upwork text {
+  fill: #fff;
+  opacity: 0.81;     /* lighter than LinkedIn */
+  font-size: 16px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+
+.footer-name::after {
+  content: "•";
+  margin: 0 6px;
+  opacity: 0.4;
+}
+.footer-name{
+	opacity:0.8;
+	font-weight:600;
+}
+</style>
+<footer class="site-footer">
+  <div class="footer-inline">
+    <span class="footer-name">© 2026 Alexander Koziy</span>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/alex-koziy-526b3257/"
+       target="_blank"
+       rel="noopener"
+       aria-label="LinkedIn"
+       class="footer-icon footer-icon-linkedin">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+        <rect x="2" y="9" width="4" height="12"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+    </a>
+
+    <!-- Upwork (Up) -->
+    <a href="https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/"
+       target="_blank"
+       rel="noopener"
+       aria-label="Upwork"
+       class="footer-icon footer-icon-upwork">
+      <svg viewBox="0 0 32 16" aria-hidden="true" style="margin-top: 5px;">
+        <text
+          x="0"
+          y="13"
+          font-size="14"
+          font-family="Inter, system-ui, -apple-system, sans-serif"
+          font-weight="600"
+          letter-spacing="0.2">
+          Up
+        </text>
+      </svg>
+    </a>
+  </div>
+</footer>
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+  const navItems = navLinks.querySelectorAll("a");
+
+  function closeMenu() {
+    navLinks.classList.remove("active");
+    hamburger.textContent = "☰";
+  }
+
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.toggle("active");
+    hamburger.textContent = isOpen ? "✕" : "☰";
+    console.log(isOpen);
+    console.log(hamburger.textContent);
+  });
+
+  navItems.forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".nav-container")) {
+      closeMenu();
+    }
+  });
+
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPFLLNJFNH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LPFLLNJFNH');
+</script>
+</body>
+</html>
