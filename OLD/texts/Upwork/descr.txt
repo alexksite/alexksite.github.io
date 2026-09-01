@@ -1,0 +1,14 @@
+Senior Java/Spring Boot Developer 
+$40.00/hr 
+
+I’m a Senior Java Developer with 20+ years of commercial experience building and maintaining enterprise web applications. I specialize in Spring Boot backend (REST API, Data Persistence, etc.) and have strong ZK Framework experience for creating UIs.
+
+Skills:
+Java, Spring Boot, Spring Framework
+Hibernate / JPA
+REST APIs, OpenAPI / Swagger
+ZK Framework (MVC / MVVM)
+PostgreSQL, Oracle, SQL Server, MySQL
+Monitoring & observability: Grafana, Prometheus
+CI/CD, application monitoring, troubleshooting
+AWS, Azure, GCP

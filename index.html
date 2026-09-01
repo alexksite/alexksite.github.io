@@ -1,1084 +1,1315 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	  <script src="jquery16/jquery.min.js"></script>	
-	  <meta charset="UTF-8" />
-	  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-	  <title>Java Spring Boot Developer — Alex Koziy</title>
-	  <link rel="stylesheet" href="css/style.css" />
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alex Koziy — AI Engineer (Python &amp; AWS) &amp; Java/Spring Boot Architect</title>
+<meta name="description" content="Alex Koziy builds production AI systems with Python and AWS — RAG pipelines, LLM services and agent workflows — backed by 20+ years of Java/Spring Boot enterprise architecture. Official ZK &amp; Keikai partner." />
+<meta name="author" content="Alexander Koziy" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://www.alexkoziy.com/" />
 
-		<!-- Favicon -->
-		<link rel="icon" href="images/logo_AK32x29.png" sizes="any">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/logo_AK32x29.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="images/logo_AK16x14.png">
-		<link rel="apple-touch-icon" href="images/logo_AK180x164.png">
-		<link rel="manifest" href="/site.webmanifest">
-	</head>
-	<body id="top">
-  
-	<nav class="nav">
-	  <div class="nav-container">
-	  	<a href="index.html" style="margin:0;">
-		    <div class="logo">
-		    	<img src="images/logo_AK.png" height="40px"/><img style="margin-left: 20px;height: 25px;margin-bottom: 7px;" src="images/logo_text.png"/>
-		    </div>
-		</a>
-		
-		<button class="hamburger" id="hamburger" aria-label="Menu">
-		  ☰
-		</button>
-	
-	    <ul class="nav-links" id="nav-links" style="top:2px;">
-	      <li><a href="index.html#about" style="scroll-margin-top: -50px;">About</a></li>
-	      <li><a href="index.html#what-i-do">What I Do</a></li>
-	      <li><a href="index.html#clients-partners">Clients & Partners</a></li>
-	      <li><a href="index.html#contact">Contact</a></li>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Alex Koziy" />
+<meta property="og:url" content="https://www.alexkoziy.com/" />
+<meta property="og:title" content="Alex Koziy — AI Engineer (Python &amp; AWS) &amp; Java/Spring Boot Architect" />
+<meta property="og:description" content="Production AI systems with Python and AWS, built on 20+ years of enterprise Java architecture. RAG, LLM services, agent workflows, Bedrock and serverless." />
+<meta property="og:image" content="https://www.alexkoziy.com/images/og-image.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Alex Koziy — AI engineer working in Python and AWS" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Alex Koziy — AI Engineer (Python &amp; AWS) &amp; Java Architect" />
+<meta name="twitter:description" content="Production AI systems with Python and AWS, built on 20+ years of enterprise Java architecture." />
+<meta name="twitter:image" content="https://www.alexkoziy.com/images/og-image.jpg" />
+<meta name="theme-color" content="#08090d" />
+<meta name="keywords" content="AI engineer, Python developer, AWS, Amazon Bedrock, RAG, retrieval-augmented generation, LLM agents, FastAPI, Java developer, Spring Boot, ZK Framework, Keikai, enterprise architecture, legacy modernization, ERP, hire AI engineer" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:image:alt" content="Alex Koziy — AI engineer working in Python and AWS" />
+<link rel="alternate" hreflang="en" href="https://www.alexkoziy.com/" />
+<link rel="alternate" hreflang="x-default" href="https://www.alexkoziy.com/" />
+<link rel="me" href="https://www.linkedin.com/in/alex-koziy-526b3257/" />
+<link rel="me" href="https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/" />
+<link rel="me" href="mailto:info@alexkoziy.com" />
+<link rel="author" href="https://www.alexkoziy.com/#person" />
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="Plain-text summary for AI agents (llms.txt)" />
 
-	      <li class="onlyhamburger"><a href="contact_team.html">Request a Team</a></li>
-	      <li class="onlyhamburger"><a href="contact_project.html">Hire Java Spring Boot developer</a></li>
-<!-- 	      <li>
-	      		<a href="https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/" target="_blank" style="text-decoration:none;">
-					<img alt="" style="margin-right: 7px;" height="30px" src="images/iconfinder_79-upwork_1929178(2).png">
-				</a>
-				<a href="https://www.linkedin.com/in/alex-koziy-526b3257/" target="_blank" style="text-decoration:none;">
-					<img alt="" style="margin-top:-5px;margin-right: 7px;" height="27px" src="images/book+business+circle+contact+contacts+linkedin+icon-1320073242500496551_24.png">
-				</a>
-		  </li> -->
-	    </ul>
-	  </div>
+<link rel="icon" href="images/logo_AK32x29.png" sizes="32x32" />
+<link rel="icon" href="images/logo_AK16x14.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="images/logo_AK180x164.png" />
+<link rel="manifest" href="site.webmanifest" />
 
-	</nav>
-  
-<style>
-.zk-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #2563eb;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.alexkoziy.com/#person",
+      "name": "Alexander Koziy",
+      "alternateName": [
+        "Alex Koziy",
+        "Alex K."
+      ],
+      "givenName": "Alexander",
+      "familyName": "Koziy",
+      "url": "https://www.alexkoziy.com/",
+      "mainEntityOfPage": "https://www.alexkoziy.com/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.alexkoziy.com/images/og-image.jpg",
+        "width": 1200,
+        "height": 630,
+        "caption": "Alex Koziy — AI engineer working in Python and AWS"
+      },
+      "email": "mailto:info@alexkoziy.com",
+      "jobTitle": "AI Engineer (Python, AWS) and Java/Spring Boot Architect",
+      "description": "Alex Koziy is a software engineer building AI systems in Python on AWS. He has over 20 years of enterprise Java and Spring Boot architecture experience and has focused on AI engineering for the last two years. Official ZK and Keikai implementation partner.",
+      "disambiguatingDescription": "Independent AI and backend engineer, also acting as sales and engagement manager for Quontex dedicated development teams.",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "AI Engineer / Software Architect",
+        "occupationalCategory": "15-1252.00",
+        "skills": "Artificial Intelligence, Generative AI, Large Language Models, Retrieval-Augmented Generation, LLM Agents, Vector Search, Embeddings, Prompt Engineering, AI Evaluation, MLOps, Python, FastAPI, Pydantic, asyncio, Amazon Web Services, Amazon Bedrock, AWS Lambda, Amazon SageMaker, Amazon OpenSearch Service, Amazon DynamoDB, Amazon S3, AWS Step Functions, AWS Fargate, Serverless Architecture"
+      },
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Generative AI",
+        "Large Language Models",
+        "Retrieval-Augmented Generation",
+        "LLM Agents",
+        "Vector Search",
+        "Embeddings",
+        "Prompt Engineering",
+        "AI Evaluation",
+        "MLOps",
+        "Python",
+        "FastAPI",
+        "Pydantic",
+        "asyncio",
+        "Amazon Web Services",
+        "Amazon Bedrock",
+        "AWS Lambda",
+        "Amazon SageMaker",
+        "Amazon OpenSearch Service",
+        "Amazon DynamoDB",
+        "Amazon S3",
+        "AWS Step Functions",
+        "AWS Fargate",
+        "Serverless Architecture",
+        "Infrastructure as Code",
+        "Java",
+        "Spring Boot",
+        "Hibernate",
+        "REST API Design",
+        "Microservices",
+        "ZK Framework",
+        "Keikai",
+        "Enterprise Architecture",
+        "Legacy Modernization",
+        "Performance Optimization",
+        "JVM Profiling",
+        "ERP",
+        "CRM",
+        "Financial Planning and Analysis",
+        "Business Intelligence",
+        "MySQL",
+        "PostgreSQL",
+        "PostGIS",
+        "Microsoft SQL Server",
+        "Oracle Database",
+        "Docker",
+        "Containerization"
+      ],
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+      "affiliation": {
+        "@id": "https://www.alexkoziy.com/#quontex"
+      },
+      "worksFor": {
+        "@id": "https://www.alexkoziy.com/#quontex"
+      },
+      "workLocation": {
+        "@type": "VirtualLocation",
+        "name": "Remote, worldwide"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Business enquiries",
+        "email": "info@alexkoziy.com",
+        "availableLanguage": [
+          "English"
+        ],
+        "areaServed": "Worldwide"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/alex-koziy-526b3257/",
+        "https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/"
+      ],
+      "subjectOf": {
+        "@type": "Article",
+        "name": "Featured ZK & Keikai Partner: Alex K.",
+        "url": "https://blog.zkoss.org/2025/12/12/featured-zk-keikai-partner-alex-k/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "ZK (Potix Corporation)"
+        }
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.alexkoziy.com/#quontex",
+      "name": "Quontex",
+      "url": "https://quontex.co/",
+      "description": "Software delivery company providing dedicated development teams for enterprise IT projects. Alex Koziy represents Quontex as a sales and engagement manager.",
+      "employee": {
+        "@id": "https://www.alexkoziy.com/#person"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.alexkoziy.com/#service",
+      "name": "Alex Koziy — AI, Python, AWS and Enterprise Backend Engineering",
+      "url": "https://www.alexkoziy.com/",
+      "image": "https://www.alexkoziy.com/images/og-image.jpg",
+      "description": "Independent engineering services covering AI and LLM systems in Python on AWS, Python backend development, AWS cloud architecture, Java and Spring Boot development, and ZK/Keikai enterprise reporting.",
+      "provider": {
+        "@id": "https://www.alexkoziy.com/#person"
+      },
+      "founder": {
+        "@id": "https://www.alexkoziy.com/#person"
+      },
+      "email": "info@alexkoziy.com",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
+      "availableLanguage": [
+        "English"
+      ],
+      "priceRange": "Project-based and time-and-materials engagements",
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Generative AI",
+        "Large Language Models",
+        "Retrieval-Augmented Generation",
+        "LLM Agents",
+        "Vector Search",
+        "Embeddings",
+        "Prompt Engineering",
+        "AI Evaluation",
+        "MLOps",
+        "Python",
+        "FastAPI",
+        "Pydantic",
+        "asyncio",
+        "Amazon Web Services",
+        "Amazon Bedrock",
+        "AWS Lambda",
+        "Amazon SageMaker",
+        "Amazon OpenSearch Service",
+        "Amazon DynamoDB",
+        "Amazon S3",
+        "AWS Step Functions",
+        "AWS Fargate",
+        "Serverless Architecture",
+        "Infrastructure as Code",
+        "Java",
+        "Spring Boot",
+        "Hibernate",
+        "REST API Design",
+        "Microservices",
+        "ZK Framework",
+        "Keikai",
+        "Enterprise Architecture",
+        "Legacy Modernization",
+        "Performance Optimization",
+        "JVM Profiling",
+        "ERP",
+        "CRM",
+        "Financial Planning and Analysis",
+        "Business Intelligence",
+        "MySQL",
+        "PostgreSQL",
+        "PostGIS",
+        "Microsoft SQL Server",
+        "Oracle Database",
+        "Docker",
+        "Containerization"
+      ],
+      "serviceType": [
+        "AI & LLM Engineering",
+        "Python Backend Development",
+        "AWS Cloud Architecture",
+        "Java & Spring Boot Development",
+        "ZK Framework & Keikai Enterprise Reporting",
+        "Dedicated Development Teams via Quontex"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Engineering services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "position": 1,
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI & LLM Engineering",
+              "description": "Design and delivery of production AI features: retrieval-augmented generation pipelines, prompt and context design, tool-calling agents, guardrails, evaluation harnesses and token/latency cost control.",
+              "serviceType": "AI & LLM Engineering",
+              "provider": {
+                "@id": "https://www.alexkoziy.com/#person"
+              },
+              "areaServed": "Worldwide"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 2,
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Python Backend Development",
+              "description": "Asynchronous Python services built with FastAPI and Pydantic, using a clear service/repository structure, typed code and automated tests.",
+              "serviceType": "Python Backend Development",
+              "provider": {
+                "@id": "https://www.alexkoziy.com/#person"
+              },
+              "areaServed": "Worldwide"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 3,
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AWS Cloud Architecture",
+              "description": "Serverless and container architecture on AWS, including Amazon Bedrock and SageMaker integration, Lambda, API Gateway, S3, DynamoDB, OpenSearch, Step Functions and ECS/Fargate, provisioned as infrastructure as code with least-privilege IAM.",
+              "serviceType": "AWS Cloud Architecture",
+              "provider": {
+                "@id": "https://www.alexkoziy.com/#person"
+              },
+              "areaServed": "Worldwide"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 4,
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Java & Spring Boot Development",
+              "description": "REST API development, legacy system modernization, JVM profiling and performance optimization for mission-critical enterprise applications, based on more than 20 years of Java experience.",
+              "serviceType": "Java & Spring Boot Development",
+              "provider": {
+                "@id": "https://www.alexkoziy.com/#person"
+              },
+              "areaServed": "Worldwide"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 5,
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ZK Framework & Keikai Enterprise Reporting",
+              "description": "Implementation, migration and custom component development across ZK versions 3 to 10, and Keikai integration for spreadsheet-driven enterprise reporting. Recognised official ZK and Keikai implementation partner.",
+              "serviceType": "ZK Framework & Keikai Enterprise Reporting",
+              "provider": {
+                "@id": "https://www.alexkoziy.com/#person"
+              },
+              "areaServed": "Worldwide"
+            }
+          },
+          {
+            "@type": "Offer",
+            "position": 6,
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Dedicated Development Teams via Quontex",
+              "description": "Structuring and launching dedicated development teams for enterprise projects on behalf of Quontex, covering presales consulting, engagement setup, delivery coordination and long-term partnership management.",
+              "serviceType": "Dedicated Development Teams via Quontex",
+              "provider": {
+                "@id": "https://www.alexkoziy.com/#person"
+              },
+              "areaServed": "Worldwide"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.alexkoziy.com/#website",
+      "url": "https://www.alexkoziy.com/",
+      "name": "Alex Koziy",
+      "alternateName": "alexkoziy.com",
+      "description": "Portfolio and services of Alex Koziy, AI engineer working in Python and AWS with 20+ years of enterprise Java architecture experience.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://www.alexkoziy.com/#person"
+      },
+      "copyrightHolder": {
+        "@id": "https://www.alexkoziy.com/#person"
+      },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.alexkoziy.com/#webpage",
+      "url": "https://www.alexkoziy.com/",
+      "name": "Alex Koziy — AI Engineer (Python & AWS) & Java/Spring Boot Architect",
+      "description": "Alex Koziy builds production AI systems with Python and AWS, including RAG pipelines, LLM services and agent workflows, backed by 20+ years of Java/Spring Boot enterprise architecture.",
+      "isPartOf": {
+        "@id": "https://www.alexkoziy.com/#website"
+      },
+      "about": {
+        "@id": "https://www.alexkoziy.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://www.alexkoziy.com/#person"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.alexkoziy.com/images/og-image.jpg"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-08-31",
+      "dateModified": "2026-08-31",
+      "significantLink": [
+        "https://www.alexkoziy.com/case-studies.html"
+      ],
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero__sub",
+          "#at-a-glance",
+          "#faq"
+        ]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.alexkoziy.com/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.alexkoziy.com/#faq",
+      "url": "https://www.alexkoziy.com/#faq",
+      "name": "Frequently asked questions about Alex Koziy",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://www.alexkoziy.com/#website"
+      },
+      "about": {
+        "@id": "https://www.alexkoziy.com/#person"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Alex Koziy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Alex Koziy (Alexander Koziy) is a software engineer who builds AI systems in Python on Amazon Web Services. He has more than 20 years of experience in enterprise Java and Spring Boot architecture, and for the last two years his work has focused on AI engineering. He is a recognised official ZK and Keikai implementation partner and works with clients worldwide on a remote basis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Alex Koziy working on now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For the past two years Alex Koziy has worked on AI engineering using Python and AWS. That includes retrieval-augmented generation (RAG) over private enterprise document sets, LLM-backed services, agent workflows that call real business systems, and the evaluation and cost controls needed to run them safely in production."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What AI services does Alex Koziy provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "He provides retrieval-augmented generation pipelines including document ingestion, chunking strategy, embeddings and vector search; LLM services and tool-calling agent workflows with guardrails, retries and human-in-the-loop checkpoints; AWS-native AI architecture; evaluation harnesses with token, latency and spend budgets; and integration of AI into existing ERP, CRM and finance platforms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AWS services does he use to build AI systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amazon Bedrock for model access, AWS Lambda and Amazon ECS/Fargate for compute, Amazon API Gateway for interfaces, Amazon S3 for document storage, Amazon DynamoDB for state, Amazon OpenSearch Service for vector search, AWS Step Functions for orchestration, and Amazon SageMaker where custom models are needed. Infrastructure is provisioned as code with least-privilege IAM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Alex Koziy still work with Java and Spring Boot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Java and Spring Boot remain part of his practice, particularly for legacy modernization, REST API development, JVM profiling and performance optimization, and for adding AI capabilities to existing Java enterprise systems without destabilising them. The AI work is an addition to that foundation, not a replacement for it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is his experience with ZK Framework and Keikai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "He has worked with the ZK Framework across every major generation from version 3 through version 10, including custom component development and phased migrations. Over the last five years he has integrated Keikai into enterprise applications to deliver spreadsheet-based business solutions such as custom reporting and financial analysis. He is a recognised official ZK and Keikai implementation partner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What industries has Alex Koziy built software for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Finance and financial planning and analysis, government and public safety, industrial and energy management, transportation and fleet tracking, real estate, and enterprise ERP, CRM and e-commerce systems. Delivered platforms include financial planning and analysis tools, law enforcement case management, contract management, inventory management, energy monitoring and real-time fleet mapping."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can you hire Alex Koziy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are two engagement models. You can hire him directly as an independent senior specialist for AI, Python, AWS or Java work, which suits adding AI features to an existing product, architecture and modernization work, and long-term maintenance. Alternatively he can arrange a dedicated development team through Quontex, which suits greenfield enterprise projects and rapidly scaling delivery capacity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Alex Koziy available for remote work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. He works remotely with clients worldwide and is currently available for new engagements. He typically responds to enquiries within one business day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you contact Alex Koziy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By email at info@alexkoziy.com, by booking a free 30-minute consultation call through the scheduling link on alexkoziy.com, or through his LinkedIn or Upwork profiles. Email and a booked call are the fastest routes."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.alexkoziy.com/#featured-work",
+      "name": "Featured projects",
+      "description": "Selected enterprise systems designed and delivered by Alex Koziy.",
+      "numberOfItems": 3,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Financial Planning & Analysis Platform",
+            "description": "A platform that consolidates complex financial and operational data so organizations can generate custom reports, visualize trends and make data-driven decisions across multiple business units. Keikai integration enabled custom reporting and streamlined financial analysis.",
+            "creator": {
+              "@id": "https://www.alexkoziy.com/#person"
+            },
+            "url": "https://www.alexkoziy.com/case-studies.html"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Dynamic Public Safety",
+            "description": "Law enforcement software built from the ground up to support complex criminal justice workflows, including case management, reporting and data exchange between multiple agencies. Improved UI responsiveness and scalability for statewide deployments.",
+            "creator": {
+              "@id": "https://www.alexkoziy.com/#person"
+            },
+            "url": "https://www.alexkoziy.com/case-studies.html"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Interactive Map for Transportation Company",
+            "description": "A real-time vehicle tracking solution visualizing live locations and historical routes on an interactive map, enabling transportation companies to monitor fleet activity efficiently. Improved fleet visibility and operational control.",
+            "creator": {
+              "@id": "https://www.alexkoziy.com/#person"
+            },
+            "url": "https://www.alexkoziy.com/case-studies.html"
+          }
+        }
+      ]
+    }
+  ]
 }
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-.zk-link:hover {
-  color: #1d4ed8;
-  border-bottom-color: #1d4ed8;
-}
-</style>
-<section id="about" class="section" style="scroll-margin-top: 20px;">
-  <h2>About</h2>
-  <p>
-    I am a Java/Spring Boot developer with over 20 years of experience delivering reliable, scalable, and high-performance web applications. I help businesses modernize legacy systems, optimize performance, and extend existing applications without costly rewrites.
-    <br/><br/>
-    I worked on designing and implementing <strong>REST APIs</strong> with <strong>Spring Boot</strong>, fixing legacy and poorly performing backend code, API integrations with third-party systems, troubleshooting production issues and stabilizing systems.
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html" aria-label="Alex Koziy — home">
+      <img src="images/logo_AK.png" alt="Alex Koziy monogram logo" width="32" height="32" />
+      <span>
+        <span class="brand__name">Alex Koziy</span>
+        <span class="brand__role">AI · Python · AWS</span>
+      </span>
+    </a>
 
-    <br/><br/>
-    As a front-end framework I use ZK. Having worked with ZK since version 3 through ZK 10, I bring deep technical insight and practical experience. Over the last 5 years, I have integrated Keikai into enterprise applications to deliver advanced spreadsheet-based business solutions.
-    <br/><br/>
-    Whether you need long-term support, performance optimization, or new feature development, I deliver clean, maintainable solutions across CRM, ERP, e-commerce, and custom systems — including third-party integrations, cloud services, and custom ZK components.
-	<br/><br/>
-	I’m an official implementation partner of <strong>ZK</strong>, recognized for delivering
-    enterprise-grade solutions using ZK and Keikai.
-  	<a class="zk-link" href="https://blog.zkoss.org/2025/12/12/featured-zk-keikai-partner-alex-k/"
-     	target="_blank" rel="noopener">
-    	View ZK announcement →
-  	</a>
-  </p>
-</section>
-
-
-
-
-
-
-
-
-
-<style>
-.what-i-do {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-}
-
-.section-title {
-  /*font-size: 2rem;*/
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-/* Layout */
-.paths {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-}
-
-/* Card */
-.path-card {
-  background: #fff;
-  border: 1px solid #eaeaea;
-  border-radius: 14px;
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Header */
-.path-header {
-  margin-bottom: 1.5rem;
-}
-
-.path-icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.path-label {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #666;
-}
-
-.path-header h3 {
-  font-size: 1.45rem;
-  font-weight: 700;
-  margin: 0.4rem 0 0.5rem;
-}
-
-.path-intro {
-  font-size: 0.95rem;
-  color: #444;
-}
-
-/* Best for */
-.best-for {
-  margin: 1.5rem 0 2rem;
-  padding-left: 1.2rem;
-}
-
-.best-for li {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-/* Services */
-.service-item {
-  padding-left: 1rem;
-  border-left: 3px solid #f0f0f0;
-  margin-bottom: 1.8rem;
-}
-
-.service-item h4 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-}
-
-.service-item p {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  margin-bottom: 0.3rem;
-}
-
-.service-item .muted {
-  color: #555;
-}
-
-/* CTA */
-.cta {
-  margin-top: auto;
-  display: inline-block;
-  padding: 0.8rem 1.4rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.2s ease;
-}
-
-.cta.primary {
-  background: #000;
-  color: #fff;
-}
-
-.cta.primary:hover {
-  background: #222;
-}
-
-.cta.secondary {
-  background: #f5f5f5;
-  color: #000;
-}
-
-.cta.secondary:hover {
-  background: #eaeaea;
-}
-
-.engagement-overview {
-  max-width: 1100px;
-  margin: 0 auto 2.1rem;
-  padding: 1.8rem 2rem;
-  border: 1px solid #e6e6e6;
-  border-radius: 14px;
-  background: #fafafa;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-}
-
-.engagement-overview p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #222;
-  margin: 0;
-}
-
-/* Highlights */
-.highlight {
-  font-weight: 600;
-  padding: 0.15rem 0.35rem;
-  border-radius: 6px;
-}
-
-.highlight.expert {
-  background: #f1f1f1;
-}
-
-.highlight.delivery {
-  background: #f3f0fa;
-}
-
-.quontex-link {
-  color: #000;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1px solid #e5e7eb;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.quontex-link:hover {
-  border-bottom-color: #000;
-}
-</style>
-
-<section class="what-i-do" id="what-i-do" style="scroll-margin-top: 75px;">
-  <h2 class="section-title">What I Do</h2>
-  
-	<div class="engagement-overview">
-	  <p>
-	    I engage with clients either
-	    <span class="highlight expert">directly as an independent Java/Spring Boot specialist</span>,
-	    or as a
-	    <span class="highlight delivery">
-	      sales and engagement manager representing
-	      <strong><a href="https://quontex.co/" target="_blank" rel="noopener" class="quontex-link">Quontex</a></strong>
-	    </span>.
-	  </p>
-	</div>
-
-  <div class="paths">
-    <!-- Path 1: Individual Expert -->
-    <div class="path-card">
-      <div class="path-header">
-        <div class="path-icon">👤</div>
-        <span class="path-label">Individual Expertise</span>
-        <h3>Java/Spring Boot Developer</h3>
-        <p class="path-intro">
-          Work directly with me as a senior Java/Spring Boot specialist.
-        </p>
-      </div>
-
-	  <h4>Best suited for</h4>
-      <ul class="best-for">
-        <li>Existing applications needing expert support</li>
-        <li>Architecture design or modernization</li>
-        <li>Performance, scalability, and long-term maintenance</li>
-      </ul>
-
-      <div class="service-item">
-        <h4>Legacy system migration & modernization</h4>
-        <p>
-          Upgrade and refactor existing applications to improve performance,
-          security, and maintainability.
-        </p>
-        <p class="muted">
-          Migration from older versions, modernization, phased roll-outs.
-        </p>
-      </div>
-      
-      <div class="service-item">
-        <h4>Performance &amp; user experience optimization</h4>
-        <p>
-          Identify bottlenecks and optimize both server-side and UI layers.
-        </p>
-        <p class="muted">
-          JVM profiling, rendering optimization, async processing,
-                caching strategies.
-        </p>
-      </div>
-      
-      <div class="service-item">
-        <h4>API & backend integration</h4>
-        <p>
-          Integrate applications with enterprise backends, third-party services, and microservice architectures.
-        </p>
-        <p class="muted">
-          
-        </p>
-      </div>
-
-      <a href="contact_project.html" class="cta primary">Hire me as expert</a>
+    <div class="nav__links">
+      <a href="#focus">AI Focus</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#work">Work</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="#faq">FAQ</a>
     </div>
 
-    <!-- Path 2: Team & Delivery -->
-    <div class="path-card">
-      <div class="path-header">
-        <div class="path-icon">👥</div>
-        <span class="path-label">Delivery Model</span>
-        <h3>Dedicated Teams & Project Delivery</h3>
-        <p class="path-intro">
-		  I work with clients on behalf of <a href="https://quontex.co/" target="_blank" rel="noopener" class="quontex-link">Quontex</a> to structure and launch dedicated development teams tailored to enterprise project needs.
-			<br/>
-          My role covers presales consulting, engagement setup, delivery coordination, and long-term partnership management, ensuring that <a href="https://quontex.co/" target="_blank" rel="noopener" class="quontex-link">Quontex</a> teams deliver predictable and scalable results.        
-        </p>
-      </div>
-
-	  <h4>Best suited for</h4>
-      <ul class="best-for">
-        <li>New enterprise projects or greenfield development</li>
-        <li>Rapid scaling of delivery capacity through dedicated teams</li>
-        <li>Long-term product development and strategic delivery partnerships</li>
-      </ul>
-
-      <div class="service-item">
-        <h4>Dedicated development teams</h4>
-        <p>
-          <a href="https://quontex.co/" target="_blank" rel="noopener" class="quontex-link">Quontex</a> assembles and delivers dedicated development teams to execute enterprise IT projects from planning to production.
-
-		  I support clients throughout the engagement lifecycle — from initial requirements and team setup to delivery alignment and long-term cooperation.
-        </p>
-        <h4>Key focus areas:</h4>
-        <p class="muted">
-          Team formation, delivery coordination, commercial alignment, and ongoing client engagement.
-        </p>
-      </div>
-
-      <a href="contact_team.html" class="cta secondary">Request a team</a>
+    <div class="nav__cta">
+      <a class="btn btn--primary btn--sm" href="#contact">Book a call</a>
     </div>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</section>
-
-
-<style>
-
-.clients-section {
-  padding: 24px 24px;
-  /*background-color: #f9fafb;*/
-}
-
-.clients-container {
-  max-width: 1100px;
-      margin: 0 auto;
-    padding: 1rem 1.5rem;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  /*text-align: center;*/
-}
-
-.clients-title {
-  font-weight: 700;
-  /*margin-bottom: 40px;*/
-  color: #111827;
-}
-
-.clients-subtitle {
-  font-size: 1rem;
-  color: #6b7280;
-  margin-bottom: 32px;
-}
-
-.clients-logos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 32px;
-  align-items: center;
-  margin-bottom: 32px;
-}
-
-.client-logo {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: center;
-}
-
-.client-logo:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-}
-
-.client-logo img {
-  max-height: 48px;
-  max-width: 100%;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.85;
-}
-
-.client-logo:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-.clients-cta {
-  margin-top: 16px;
-}
-
-.clients-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #2563eb;
-  background-color: #eef2ff;
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.clients-link:hover {
-  background-color: #e0e7ff;
-  transform: translateY(-1px);
-}
-
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 28px;
-  border-radius: 14px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.btn-secondary {
-  background-color: #f3f4f6;
-  color: #111827;
-}
-
-.btn-secondary:hover {
-  background-color: #e5e7eb;
-  transform: translateY(-1px);
-}
-
-</style>
-
-
-
-<section class="clients-section" id="clients-partners" style="scroll-margin-top: 60px;">
-  <div class="clients-container">
-    <h2 class="clients-title">Clients & Partners</h2>
-    <p class="clients-subtitle">
-      Companies I’ve worked with on enterprise and long-term projects.
-    </p>
-    
-    <div class="clients-logos">      
-	  <a href="https://www.stratifytech.com/" target="_blank" rel="noopener">
-	     <div class="client-logo" title="Enterprise systems & integrations">
-	        <img src="images/c_logos/stratifytech_2.png" alt="Stratifytech">
-	      </div>
-      </a>
-
-	  <a href="https://www.youtube.com/watch?v=6J2l4F3Ygaw" target="_blank" rel="noopener">
-	      <div class="client-logo" title="Enterprise consulting & internal platforms">
-	        <img src="images/c_logos/PWC-600px-logo.png" alt="PwC">
-	      </div>
-      </a>
-
-	  <a href="https://www.dynamicinventory.net/" target="_blank" rel="noopener">
-	      <div class="client-logo" title="Inventory & ERP-related systems">
-	        <img src="images/c_logos/logo-dynamic-inventory.png" alt="Dynamic Inventory">
-	      </div>
-      </a>
-    </div>
-
-    <div class="clients-cta">
-      <a href="case_studies.html" class="btn btn-secondary">
-        More clients →
-      </a>
-    </div>
-  </div>
-</section>
-
-
-
-<style>
-
-
-.contact-section {
-  padding: 20px 24px;
-  background-color: #f9fafb;
-}
-
-.contact-container {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-title {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #111827;
-}
-
-.contact-subtitle {
-  font-size: 1.05rem;
-  color: #6b7280;
- /*  margin-bottom: 36px; */
-}
-
-.contact-actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
-.contact-note {
-  font-size: 0.9rem;
-  color: #9ca3af;
-}
-
-.contact-form {
-  max-width: 640px;
-  margin: 0 auto 24px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
- /*  margin-bottom: 16px; */
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  font-size: 0.95rem;
-  font-family: inherit;
-  background-color: #ffffff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  margin-bottom: 20px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-.form-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 640px) {
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-}
-
-.error-message {
-  font-size: 0.8rem;
-  color: #dc2626;
-  margin-top: 6px;
-  /* display: none; */
-  visibility: hidden;
-}
-
-.form-field.error .error-message {
-  /* display: block; */
-  visibility: visible;
-}
-
-.form-field.error input,
-.form-field.error textarea {
-  border-color: #dc2626;
-}
-
-.form-field.error input:focus,
-.form-field.error textarea:focus {
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
-}
-
-/******************/
-/* FORM TOGGLE */
-.zk-form-toggle {
-  margin-top: 22px;
-}
-
-.zk-toggle-btn {
-  list-style: none;
-  cursor: pointer;
-  padding: 14px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  font-weight: 600;
-}
-
-.zk-form-toggle[open] .zk-toggle-btn {
-  margin-bottom: 18px;
-}
-
-/*****************/
-/* RIGHT */
-.zk-right {
-  background: #f5f5f5;
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-  height: fit-content;
-}
-
-.calendar-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  width: 100%;
-  padding: 14px 20px;
-
-  background: #1f2937;
-  color: white;
-
-  font-size: 1rem;
-  font-weight: 600;
-
-  border-radius: 12px;
-  text-decoration: none;
-  border: 1px solid var(--brand-black);
-
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.calendar-button:hover {
-  background: black;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2); 
-}
-
-.zk-secondary-links {
-  margin-top: 16px;
-  font-size: 0.95rem;
-}
-
-.zk-secondary-links a {
-  color: #000;
-  text-decoration: none;
-  border-bottom: 1px solid #e5e7eb;
-  font-weight: 500;
-}
-
-.zk-secondary-links span {
-  margin: 0 8px;
-  color: #9ca3af;
-}
-
-.zk-note {
-  margin-top: 10px;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-/********************/
-/* Default: show "Send a message instead" */
-.zk-toggle-btn .label-close {
-  display: none;
-}
-
-/* When details is open */
-.zk-form-toggle[open] .label-open {
-  display: none;
-}
-
-.zk-form-toggle[open] .label-close {
-  display: inline;
-}
-
-.zk-form-toggle[open] .zk-toggle-btn {
-  background: #F8F9FF;
-  color: black;
-  border-color: #F8F9FF;
-}
-.zk-toggle-btn span {
-  transition: opacity 0.2s ease;
-}
-</style>
-
-
-
-
-
-
-
-<section class="contact-section" id="contact">
-  <div class="contact-container">
-
-    <h2 class="contact-title">Contact</h2>
-    <p class="contact-subtitle">
-      Let’s discuss how I can support your project or consulting needs.
-    </p>
-    
-          <!-- RIGHT: CONTACT -->
-      <aside class="zk-right">
-
-        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3V7JCfEXgB9RWm0RUlyv6uiQxpczmkj5gUc7U9DvIT2xsqZN4mNHbBolgMISTyLfxACEfJIf9D"
-           target="_blank"
-           rel="noopener"
-           class="calendar-button">
-          <span style="font-size:1.2em;">📅</span> Book a Call
+</nav>
+
+<div class="drawer" id="drawer">
+  <a href="#focus">AI Focus</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#work">Work</a>
+  <a href="case-studies.html">Case Studies</a>
+  <a href="#engage">Engage</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn--primary" href="#contact">Book a call</a>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__grid" aria-hidden="true"></div>
+
+    <div class="wrap">
+      <p class="badge"><span class="dot" aria-hidden="true"></span> Last 2 years: <b>AI engineering with Python &amp; AWS</b></p>
+
+      <h1>I build <span class="grad-text">AI systems</span> that survive production.</h1>
+
+      <p class="hero__sub">
+        For the past two years my work has been <strong>AI engineering in Python on AWS</strong> —
+        retrieval pipelines, LLM services and agent workflows that real businesses depend on.
+        Behind that sits <strong>20+ years of enterprise Java/Spring Boot architecture</strong>,
+        which is exactly why the AI I ship is observable, secure and maintainable rather than a demo.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Book a 30-min call
         </a>
+        <a class="btn btn--ghost" href="case-studies.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          See case studies
+        </a>
+      </div>
 
-        <div class="zk-secondary-links">
-          <a href="mailto:info@alexkoziy.com" class="quontex-link">Send Email</a>
-          <span>•</span>
-          <a href="https://www.linkedin.com/in/alex-koziy-526b3257/"
-             target="_blank"
-             rel="noopener" class="quontex-link">
-            LinkedIn
-          </a>
-          <span>•</span>
-          <a href="https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/" target="_blank"
-             rel="noopener" class="quontex-link">
-             Upwork
-          </a>
+      <p class="hero__meta">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Available for new engagements</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Remote worldwide</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Replies within 1 business day</span>
+      </p>
+
+      <dl class="stats rv">
+        <div class="stat"><dt class="grad-text">20+</dt><dd>Years building enterprise backends</dd></div>
+        <div class="stat"><dt class="grad-text">2</dt><dd>Years focused on AI with Python &amp; AWS</dd></div>
+        <div class="stat"><dt class="grad-text">8+</dt><dd>Enterprise systems delivered end-to-end</dd></div>
+        <div class="stat"><dt class="grad-text">ZK</dt><dd>Official ZK &amp; Keikai implementation partner</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ TECH STRIP ============ -->
+  <div class="strip" aria-hidden="true">
+    <div class="strip__track">
+      <span>Python</span><span>Amazon Bedrock</span><span>FastAPI</span><span>RAG</span><span>AWS Lambda</span><span>LangChain</span><span>Vector Search</span><span>SageMaker</span><span>Spring Boot</span><span>Java</span><span>ZK &amp; Keikai</span><span>Docker</span><span>PostgreSQL</span><span>Terraform</span>
+      <span>Python</span><span>Amazon Bedrock</span><span>FastAPI</span><span>RAG</span><span>AWS Lambda</span><span>LangChain</span><span>Vector Search</span><span>SageMaker</span><span>Spring Boot</span><span>Java</span><span>ZK &amp; Keikai</span><span>Docker</span><span>PostgreSQL</span><span>Terraform</span>
+    </div>
+  </div>
+
+  <!-- ============ AI FOCUS ============ -->
+  <section class="section" id="focus">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">What I'm doing now</p>
+        <h2>Two years deep in <span class="grad-text">AI, Python and AWS</span></h2>
+        <p class="lead">
+          I moved my practice into AI because that is where the hard, interesting problems moved.
+          The stack changed — Python instead of Java, Bedrock and Lambda instead of Tomcat — but the
+          discipline did not. These systems still need schemas, tests, cost ceilings and a way to
+          debug them at 2 a.m.
+        </p>
+      </div>
+
+      <div class="split">
+        <ul class="feature-list rv">
+          <li>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg> Retrieval-Augmented Generation</h3>
+            <p>Document ingestion, chunking strategy, embeddings and vector search that returns grounded answers with citations — not confident guesses.</p>
+          </li>
+          <li>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2a4 4 0 014 4v1h1a3 3 0 010 6h-1v5a2 2 0 01-2 2h-4a2 2 0 01-2-2v-5H7a3 3 0 010-6h1V6a4 4 0 014-4z"/></svg> LLM services &amp; agent workflows</h3>
+            <p>Tool-calling agents and multi-step pipelines with guardrails, retries, timeouts and human-in-the-loop checkpoints where the stakes justify them.</p>
+          </li>
+          <li>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 15a4 4 0 004 4h11a3 3 0 000-6 5 5 0 00-9.6-1.6A4 4 0 003 15z"/></svg> AWS-native architecture</h3>
+            <p>Bedrock, Lambda, API Gateway, S3, DynamoDB, OpenSearch, Step Functions and ECS/Fargate — provisioned as code, with IAM scoped properly.</p>
+          </li>
+          <li>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg> Evaluation, cost &amp; observability</h3>
+            <p>Regression suites for prompts, token and latency budgets, structured tracing. You get to see what the model did and what it cost.</p>
+          </li>
+          <li>
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3l8 4v6c0 4.5-3.4 7.3-8 8-4.6-.7-8-3.5-8-8V7l8-4z"/></svg> AI inside existing enterprise systems</h3>
+            <p>The niche I own: adding AI to ERP, CRM and finance platforms that already work, without destabilising the system paying the bills.</p>
+          </li>
+        </ul>
+
+        <div class="rv">
+          <div class="panel">
+            <div class="panel__bar">
+              <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+              <em>rag_service.py</em>
+            </div>
+<pre><code><span class="tc"># Grounded answers over enterprise documents</span>
+<span class="tk">from</span> fastapi <span class="tk">import</span> FastAPI, Depends
+<span class="tk">from</span> pydantic <span class="tk">import</span> BaseModel, Field
+
+app = <span class="tf">FastAPI</span>(title=<span class="ts">"Knowledge API"</span>)
+
+<span class="tk">class</span> <span class="tf">Query</span>(BaseModel):
+    question: <span class="tf">str</span> = <span class="tf">Field</span>(min_length=<span class="tn">3</span>)
+    top_k: <span class="tf">int</span> = <span class="tn">6</span>
+
+<span class="tk">class</span> <span class="tf">Answer</span>(BaseModel):
+    text: <span class="tf">str</span>
+    citations: <span class="tf">list</span>[<span class="tf">str</span>]
+    cost_usd: <span class="tf">float</span>
+
+<span class="tk">@app</span>.post(<span class="ts">"/ask"</span>, response_model=Answer)
+<span class="tk">async def</span> <span class="tf">ask</span>(q: Query, svc=<span class="tf">Depends</span>(get_rag)):
+    <span class="tc"># vector search -&gt; rerank -&gt; Bedrock</span>
+    hits = <span class="tk">await</span> svc.<span class="tf">retrieve</span>(q.question, k=q.top_k)
+    <span class="tk">return await</span> svc.<span class="tf">generate</span>(
+        q.question,
+        context=hits,
+        guardrails=<span class="tk">True</span>,
+        max_cost_usd=<span class="tn">0.05</span>,
+    )
+</code></pre>
+          </div>
+
+          <div class="chips" style="margin-top:22px">
+            <span class="chip chip--py">Python 3.12</span>
+            <span class="chip chip--py">FastAPI</span>
+            <span class="chip chip--py">Pydantic</span>
+            <span class="chip chip--ai">RAG</span>
+            <span class="chip chip--ai">LangChain</span>
+            <span class="chip chip--ai">Embeddings</span>
+            <span class="chip chip--ai">Agents</span>
+            <span class="chip chip--aws">Bedrock</span>
+            <span class="chip chip--aws">Lambda</span>
+            <span class="chip chip--aws">SageMaker</span>
+            <span class="chip chip--aws">OpenSearch</span>
+            <span class="chip chip--aws">Step Functions</span>
+            <span class="chip chip--aws">DynamoDB</span>
+            <span class="chip chip--aws">S3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE SHIFT / TIMELINE ============ -->
+  <section class="section section--alt" id="about">
+    <div class="wrap">
+      <div class="split">
+        <div class="sec-head rv" style="margin-bottom:0">
+          <p class="eyebrow">The through-line</p>
+          <h2>Why an AI engineer with 20 years of Java is a feature, not a detour</h2>
+          <p class="lead">
+            Most AI projects do not fail on the model. They fail on integration, data access,
+            permissions, cost and the fact that nobody can tell why the output changed. Those are
+            enterprise backend problems, and I have been solving them since long before
+            "AI engineer" was a job title.
+          </p>
+          <p style="margin-top:18px;color:var(--muted);font-size:.95rem">
+            I work either directly as an independent specialist, or as a sales and engagement
+            manager representing <a class="ilink" href="https://quontex.co/" target="_blank" rel="noopener">Quontex</a>
+            when a project needs a full delivery team.
+          </p>
         </div>
 
-        <p class="zk-note">
-          Fastest response via call or email.
+        <div class="tl rv">
+          <div class="tl__item tl__item--now">
+            <p class="tl__when">Since 2024 · Current focus</p>
+            <h3>AI engineering — Python &amp; AWS</h3>
+            <p>
+              Designing and shipping AI features: RAG over private document sets, LLM-backed
+              services, agentic automation, and the evaluation and cost controls that make them
+              safe to run. Python end to end, deployed on AWS.
+            </p>
+            <div class="chips">
+              <span class="chip chip--ai">LLM / RAG</span>
+              <span class="chip chip--py">Python</span>
+              <span class="chip chip--aws">AWS</span>
+            </div>
+          </div>
+
+          <div class="tl__item">
+            <p class="tl__when">2021&ndash;2024 · Enterprise reporting</p>
+            <h3>Keikai &amp; advanced spreadsheet solutions</h3>
+            <p>
+              Five years integrating Keikai into enterprise applications to deliver
+              spreadsheet-driven business solutions — custom reporting, financial analysis and
+              Excel-grade interaction inside web systems.
+            </p>
+            <div class="chips">
+              <span class="chip">Keikai</span>
+              <span class="chip">ZK 10</span>
+              <span class="chip">Spring Boot</span>
+            </div>
+          </div>
+
+          <div class="tl__item">
+            <p class="tl__when">Ongoing · Long-standing specialism</p>
+            <h3>ZK Framework, version 3 through 10</h3>
+            <p>
+              Deep practical experience across every major ZK generation, including custom
+              components and phased migrations. Recognised as an official ZK implementation
+              partner for enterprise-grade delivery.
+            </p>
+            <div class="chips">
+              <span class="chip">ZK 3&ndash;10</span>
+              <span class="chip">Custom components</span>
+            </div>
+          </div>
+
+          <div class="tl__item">
+            <p class="tl__when">Since the 2000s · Foundation</p>
+            <h3>Java &amp; Spring Boot architecture</h3>
+            <p>
+              20+ years of reliable, scalable, high-performance web applications: REST API design,
+              fixing legacy and poorly performing backends, third-party integrations, and
+              troubleshooting production systems that cannot go down.
+            </p>
+            <div class="chips">
+              <span class="chip">Java</span>
+              <span class="chip">Spring Boot</span>
+              <span class="chip">Hibernate</span>
+              <span class="chip">SQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AT A GLANCE (extractable summary) ============ -->
+  <section class="section section--tight" id="at-a-glance" aria-labelledby="glance-h">
+    <div class="wrap">
+      <div class="sec-head rv" style="margin-bottom:32px">
+        <p class="eyebrow">At a glance</p>
+        <h2 id="glance-h">Alex Koziy at a glance</h2>
+        <p class="lead">A plain summary of who I am and what I do, for people and machines in a hurry.</p>
+      </div>
+
+      <dl class="facts rv">
+          <div>
+            <dt>Name</dt>
+            <dd>Alexander (Alex) Koziy</dd>
+          </div>
+          <div>
+            <dt>Current focus</dt>
+            <dd>AI engineering with Python and AWS (last 2 years)</dd>
+          </div>
+          <div>
+            <dt>Core experience</dt>
+            <dd>20+ years, Java and Spring Boot enterprise architecture</dd>
+          </div>
+          <div>
+            <dt>AI stack</dt>
+            <dd>Python, FastAPI, RAG, LLM agents, Amazon Bedrock, Lambda, OpenSearch</dd>
+          </div>
+          <div>
+            <dt>Enterprise stack</dt>
+            <dd>Java, Spring Boot, Hibernate, ZK 3–10, Keikai, SQL databases</dd>
+          </div>
+          <div>
+            <dt>Credential</dt>
+            <dd>Official ZK &amp; Keikai implementation partner</dd>
+          </div>
+          <div>
+            <dt>Industries</dt>
+            <dd>Finance, government, industrial, transportation, real estate, ERP/CRM</dd>
+          </div>
+          <div>
+            <dt>Engagement models</dt>
+            <dd>Direct as an independent specialist, or a dedicated team via Quontex</dd>
+          </div>
+          <div>
+            <dt>Clients &amp; partners</dt>
+            <dd>PwC, Stratifytech, Dynamic Inventory</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>Remote, working with clients worldwide</dd>
+          </div>
+          <div>
+            <dt>Availability</dt>
+            <dd>Open to new engagements; replies within 1 business day</dd>
+          </div>
+          <div>
+            <dt>Contact</dt>
+            <dd>info@alexkoziy.com</dd>
+          </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ EXPERTISE PILLARS ============ -->
+  <section class="section" id="expertise">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="eyebrow">Expertise</p>
+        <h2>Four pillars I can be hired for</h2>
+        <p class="lead">Pillar one is where I spend my time today. Pillars three and four are why clients trust me with pillar one.</p>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="card card--pillar rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 2a4 4 0 014 4v1h1a3 3 0 010 6h-1v5a2 2 0 01-2 2h-4a2 2 0 01-2-2v-5H7a3 3 0 010-6h1V6a4 4 0 014-4z"/></svg></div>
+          <h3>AI &amp; LLM Engineering</h3>
+          <p>RAG pipelines, prompt and context design, tool-calling agents, guardrails, evaluation harnesses and cost control.</p>
+          <div class="chips" style="margin-top:18px">
+            <span class="chip chip--ai">RAG</span><span class="chip chip--ai">Agents</span><span class="chip chip--ai">Evals</span>
+          </div>
+        </article>
+
+        <article class="card card--pillar rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8 3h8M12 3v6M5 21h14a2 2 0 002-2v-4a7 7 0 00-7-7h-4a7 7 0 00-7 7v4a2 2 0 002 2z"/></svg></div>
+          <h3>Python Backend</h3>
+          <p>Async FastAPI services, Pydantic schemas, clean service/repository layering, typed code and tests that actually run in CI.</p>
+          <div class="chips" style="margin-top:18px">
+            <span class="chip chip--py">FastAPI</span><span class="chip chip--py">Pydantic</span><span class="chip chip--py">pytest</span>
+          </div>
+        </article>
+
+        <article class="card card--pillar rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 15a4 4 0 004 4h11a3 3 0 000-6 5 5 0 00-9.6-1.6A4 4 0 003 15z"/></svg></div>
+          <h3>AWS Cloud</h3>
+          <p>Serverless and container architecture, Bedrock and SageMaker integration, infrastructure as code, least-privilege IAM.</p>
+          <div class="chips" style="margin-top:18px">
+            <span class="chip chip--aws">Bedrock</span><span class="chip chip--aws">Lambda</span><span class="chip chip--aws">Fargate</span>
+          </div>
+        </article>
+
+        <article class="card card--pillar rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3l8 4v6c0 4.5-3.4 7.3-8 8-4.6-.7-8-3.5-8-8V7l8-4z"/></svg></div>
+          <h3>Java, Spring Boot &amp; ZK</h3>
+          <p>Legacy modernization, JVM profiling and performance work, REST integration, and ZK/Keikai enterprise reporting.</p>
+          <div class="chips" style="margin-top:18px">
+            <span class="chip">Spring Boot</span><span class="chip">ZK 3–10</span><span class="chip">Keikai</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout rv" style="margin-top:28px">
+        <div class="callout__badge" aria-hidden="true">ZK</div>
+        <div class="callout__body">
+          <h3>Official ZK &amp; Keikai implementation partner</h3>
+          <p>Recognised by ZK for delivering enterprise-grade solutions with ZK and Keikai — a credential that still matters when AI has to live inside an existing enterprise UI.</p>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="https://blog.zkoss.org/2025/12/12/featured-zk-keikai-partner-alex-k/" target="_blank" rel="noopener">
+          Read the announcement
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section class="section section--alt" id="work">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Selected work</p>
+        <h2>Systems in production, not prototypes</h2>
+        <p class="lead">
+          Enterprise platforms across finance, government, industry and logistics — several still
+          running years after delivery. Full details on the case studies page.
         </p>
-
-        <!-- FORM TOGGLE -->
-        <details class="zk-form-toggle">
-          <summary class="zk-toggle-btn" style="margin-bottom: 0px;">
-          	 <!-- Send a message instead -->
-            <span class="label-open">Send a message instead</span>
-    		<span class="label-close">Hide form</span>
-          </summary>
-
-    <!-- form class="contact-form" method="post" action="#"-->
-	<form id="form-contact"  action="https://docs.google.com/forms/d/e/1FAIpQLSejgqvqmP8uuG1uCYUC5l9UNk6dl654dqHYa_F3F5WY9SWEQA/formResponse?" class="contact-form customForm" method="post">
-				<input type="hidden" name="RequiredFields" value="Anrede#Title,Name#Name,email#E-mail address,Nachricht#Message"/>
-      
-      <input type="hidden" name="entry.215105256" id="entry.215105256" value="Ms" style="border:0; background:0;"/>
-      <input type="hidden" name="entry.2089694982" id="entry.2089694982" class="textfeld" value="ddfs"/>
-      <input type="hidden" name="entry.1672738241" id="entry.1672738241" class="textfeld" value="sdf"/>
-      <input type="hidden" name="entry.22428767" id="entry.22428767" class="textfeld" value="dcvd"/>
-      
-      <div class="form-row">
-	      <div class="form-field">
-		   		<span class="error-message" style="text-align:left;">Name is required</span>
-		        <input
-		          type="text"
-		          name="entry.1539748077" id="entry.1539748077" class="textfeld required" value=""
-		          placeholder="Your name *"
-		        />
-		  </div>
-        
-	      <div class="form-field">
-	        <span class="error-message" style="text-align:left;">Valid email is required</span>
-	        <input
-	          type="email"
-	          name="entry.2084358838" id="entry.2084358838" class="textfeld email required" value=""
-	          placeholder="Your email *"
-	        />
-	      </div>
       </div>
-	  <div style="margin-top:16px;">
-	      <div class="form-field">
-	      		<span class="error-message" style="text-align:left;">Message is required</span>
-		      <textarea
-		        name="entry.1864134205" id="entry.1864134205" class="textarea required"
-		        rows="4"
-		        placeholder="Briefly describe your project or challenge *"
-		      ></textarea>
-		  </div>
-		</div>
-      <div class="form-actions">
-        <button type="submit" class="btn btn-primary" id="btn-submit" onfocus="this.blur();" name="Submit">
-          Send message
-        </button>
 
-<!--         <a href="mailto:info@alexkoziy.com" class="btn btn-secondary">
-          Email directly
-        </a> -->
+      <div class="grid grid--3">
+        <article class="cs rv">
+          <div class="cs__tags"><span class="cs__tag">Finance</span><span class="cs__tag">Analytics</span><span class="cs__tag cs__tag--ai">AWS</span></div>
+          <h3>Financial Planning &amp; Analysis</h3>
+          <p class="cs__desc">Consolidates complex financial and operational data so organizations can generate custom reports, visualize trends and make confident decisions across business units.</p>
+          <dl class="cs__facts">
+            <div><dt>Stack</dt><dd>Spring Boot, ZK, Keikai, AWS</dd></div>
+            <div class="cs__impact"><dt>Impact</dt><dd>Keikai integration enabled custom reporting and streamlined financial analysis</dd></div>
+          </dl>
+        </article>
+
+        <article class="cs rv">
+          <div class="cs__tags"><span class="cs__tag">Government</span><span class="cs__tag">High-Load</span></div>
+          <h3>Dynamic Public Safety</h3>
+          <p class="cs__desc">Law enforcement software built from the ground up for complex criminal justice workflows — case management, reporting and multi-agency data exchange.</p>
+          <dl class="cs__facts">
+            <div><dt>Stack</dt><dd>Java, ZK, MySQL, Hibernate, Tomcat</dd></div>
+            <div class="cs__impact"><dt>Impact</dt><dd>Improved UI responsiveness and scalability for statewide deployments</dd></div>
+          </dl>
+        </article>
+
+        <article class="cs rv">
+          <div class="cs__tags"><span class="cs__tag">Transportation</span><span class="cs__tag">Real-Time</span><span class="cs__tag">GIS</span></div>
+          <h3>Interactive Fleet Map</h3>
+          <p class="cs__desc">Real-time vehicle tracking that visualizes live locations and historical routes on an interactive map, so transport operators can monitor fleet activity as it happens.</p>
+          <dl class="cs__facts">
+            <div><dt>Stack</dt><dd>Java, ZK, OpenLayers, PostGIS</dd></div>
+            <div class="cs__impact"><dt>Impact</dt><dd>Improved fleet visibility and operational control</dd></div>
+          </dl>
+        </article>
       </div>
-    </form>
-	<script type="text/javascript">
-	$('#form-contact').on('submit', function(e) {
-	  $('#form-contact *').fadeOut(2000);
-	  $('#form-contact').prepend('Your submission has been processed...');
-	  });
-	</script>
-	<div class="success" id="hidden_iframe"  style="display:none;width: 100%;margin-bottom: 20px;color:#01A1E7;">
-		<p style="font:20px/1.8em Arial,Helvetica,sans-serif;">
-			Thank you for your message! I’ll get back to you shortly.
-		</p>	
-	</div>
-	</details>
-	</aside>	
-			
-    <p class="contact-note">
-      I usually respond within 1 business day.
-    </p>
 
-  </div>
-</section>
+      <div style="margin-top:32px" class="rv">
+        <a class="btn btn--ghost" href="case-studies.html">View all 8 case studies</a>
+      </div>
+    </div>
+  </section>
 
-<style>
-.site-footer {
-  background: #000;
-  padding: 16px;
-}
+  <!-- ============ ENGAGEMENT TRACKS ============ -->
+  <section class="section" id="engage">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="eyebrow">How to work with me</p>
+        <h2>Two ways to engage</h2>
+        <p class="lead">Hire me directly as a specialist, or bring in a full delivery team through Quontex. Same person accountable either way.</p>
+      </div>
 
-.footer-inline {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  white-space: nowrap;
-}
+      <div class="grid grid--2">
+        <article class="track track--feat rv">
+          <span class="track__tag">Most requested</span>
+          <div class="track__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="url(#gradA)" stroke-width="1.7" stroke-linecap="round"><defs><linearGradient id="gradA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></div>
+          <h3>Individual expertise</h3>
+          <p class="track__who">AI engineer · Python · AWS · Java</p>
+          <p>Work directly with me as a senior specialist. Best when you need judgement and hands-on delivery rather than headcount.</p>
 
-.footer-name {
-  font-size: 0.85rem;
-  color: #fff;
-}
+          <h4>Best suited for</h4>
+          <ul class="ticks">
+            <li>Adding AI features to an existing product or platform</li>
+            <li>Proving out an AI use case before committing a team</li>
+            <li>Existing applications needing expert backend support</li>
+            <li>Architecture design, modernization and performance work</li>
+            <li>Long-term maintenance and scalability ownership</li>
+          </ul>
 
-/* Shared icon behavior */
-.footer-icon svg {
-  fill: #fff;
-  opacity: 0.95;
-  transition: opacity 0.2s ease;
-}
+          <div class="track__foot">
+            <a class="btn btn--primary" href="#contact">Hire me as a specialist</a>
+          </div>
+        </article>
 
-.footer-icon:hover svg,
-.footer-icon:hover text {
-  opacity: 1;
-}
+        <article class="track rv">
+          <div class="track__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="url(#gradB)" stroke-width="1.7" stroke-linecap="round"><defs><linearGradient id="gradB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><circle cx="9" cy="8" r="3.4"/><path d="M2 21c0-3.6 3.1-5.8 7-5.8s7 2.2 7 5.8"/><path d="M16 5.2A3.4 3.4 0 0119 8.6M17.5 15.4c2.7.5 4.5 2.5 4.5 5.6"/></svg></div>
+          <h3>Dedicated teams &amp; project delivery</h3>
+          <p class="track__who">Via Quontex · Presales &amp; engagement management</p>
+          <p>I work with clients on behalf of <a class="ilink" href="https://quontex.co/" target="_blank" rel="noopener">Quontex</a> to structure and launch dedicated development teams for enterprise projects, covering presales, engagement setup, delivery coordination and long-term partnership management.</p>
 
-/* Ultra-small screens safety */
-@media (max-width: 360px) {
-  .footer-name {
-    font-size: 0.8rem;
-  }
-}
+          <h4>Best suited for</h4>
+          <ul class="ticks">
+            <li>New enterprise projects and greenfield development</li>
+            <li>Rapidly scaling delivery capacity with a dedicated team</li>
+            <li>Full-cycle delivery: discovery, build, long-term support</li>
+            <li>Long-term product development partnerships</li>
+            <li>CTOs and product owners who need predictable delivery</li>
+          </ul>
 
-.footer-icon-upwork {
-  transform: translateY(1px);
-}
+          <div class="track__foot">
+            <a class="btn btn--ghost" href="#contact">Request a team</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-/* LinkedIn — stronger */
-.footer-icon-linkedin svg {
-  width: 14px;
-  height: 14px;
-  opacity: 0.75;
-}
+  <!-- ============ CLIENTS ============ -->
+  <section class="section section--alt" id="clients">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="eyebrow">Clients &amp; partners</p>
+        <h2>Companies I've worked with</h2>
+        <p class="lead">Enterprise and long-term engagements.</p>
+      </div>
 
-/* Upwork "Up" — lighter */
-.footer-icon-upwork svg {
-  width: 24px;
-  height: 16px;
-}
+      <ul class="logos rv">
+        <li><img src="images/c_logos/PWC-600px-logo-dark.png" alt="PwC" loading="lazy" width="150" height="42" /></li>
+        <li><img src="images/c_logos/stratifytech_2-dark.png" alt="Stratifytech" loading="lazy" width="150" height="42" /></li>
+        <li><img src="images/c_logos/logo-dynamic-inventory-dark.png" alt="Dynamic Inventory" loading="lazy" width="150" height="42" /></li>
+      </ul>
+    </div>
+  </section>
 
-.footer-icon-upwork text {
-  fill: #fff;
-  opacity: 0.81;     /* lighter than LinkedIn */
-  font-size: 16px;
-  font-weight: 600;
-  transition: opacity 0.2s ease;
-}
+  <!-- ============ FAQ ============ -->
+  <section class="section section--alt" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-h">Frequently asked questions</h2>
+        <p class="lead">The questions clients and recruiters ask most often, answered directly.</p>
+      </div>
 
+      <div class="faq">
+        <div class="faq__item rv">
+          <h3>Who is Alex Koziy?</h3>
+          <p>Alex Koziy (Alexander Koziy) is a software engineer who builds AI systems in Python on Amazon Web Services. He has more than 20 years of experience in enterprise Java and Spring Boot architecture, and for the last two years his work has focused on AI engineering. He is a recognised official ZK and Keikai implementation partner and works with clients worldwide on a remote basis.</p>
+        </div>
+        <div class="faq__item rv">
+          <h3>What is Alex Koziy working on now?</h3>
+          <p>For the past two years Alex Koziy has worked on AI engineering using Python and AWS. That includes retrieval-augmented generation (RAG) over private enterprise document sets, LLM-backed services, agent workflows that call real business systems, and the evaluation and cost controls needed to run them safely in production.</p>
+        </div>
+        <div class="faq__item rv">
+          <h3>What AI services does Alex Koziy provide?</h3>
+          <p>He provides retrieval-augmented generation pipelines including document ingestion, chunking strategy, embeddings and vector search; LLM services and tool-calling agent workflows with guardrails, retries and human-in-the-loop checkpoints; AWS-native AI architecture; evaluation harnesses with token, latency and spend budgets; and integration of AI into existing ERP, CRM and finance platforms.</p>
+        </div>
+        <div class="faq__item rv">
+          <h3>Which AWS services does he use to build AI systems?</h3>
+          <p>Amazon Bedrock for model access, AWS Lambda and Amazon ECS/Fargate for compute, Amazon API Gateway for interfaces, Amazon S3 for document storage, Amazon DynamoDB for state, Amazon OpenSearch Service for vector search, AWS Step Functions for orchestration, and Amazon SageMaker where custom models are needed. Infrastructure is provisioned as code with least-privilege IAM.</p>
+        </div>
+        <div class="faq__item rv">
+          <h3>Does Alex Koziy still work with Java and Spring Boot?</h3>
+          <p>Yes. Java and Spring Boot remain part of his practice, particularly for legacy modernization, REST API development, JVM profiling and performance optimization, and for adding AI capabilities to existing Java enterprise systems without destabilising them. The AI work is an addition to that foundation, not a replacement for it.</p>
+        </div>
+        <div class="faq__item rv">
+          <h3>What is his experience with ZK Framework and Keikai?</h3>
+          <p>He has worked with the ZK Framework across every major generation from version 3 through version 10, including custom component development and phased migrations. Over the last five years he has integrated Keikai into enterprise applications to deliver spreadsheet-based business solutions such as custom reporting and financial analysis. He is a recognised official ZK and Keikai implementation partner.</p>
+        </div>
+        <div class="faq__item rv">
+          <h3>What industries has Alex Koziy built software for?</h3>
+          <p>Finance and financial planning and analysis, government and public safety, industrial and energy management, transportation and fleet tracking, real estate, and enterprise ERP, CRM and e-commerce systems. Delivered platforms include financial planning and analysis tools, law enforcement case management, contract management, inventory management, energy monitoring and real-time fleet mapping.</p>
+        </div>
+        <div class="faq__item rv">
+          <h3>How can you hire Alex Koziy?</h3>
+          <p>There are two engagement models. You can hire him directly as an independent senior specialist for AI, Python, AWS or Java work, which suits adding AI features to an existing product, architecture and modernization work, and long-term maintenance. Alternatively he can arrange a dedicated development team through Quontex, which suits greenfield enterprise projects and rapidly scaling delivery capacity.</p>
+        </div>
+        <div class="faq__item rv">
+          <h3>Is Alex Koziy available for remote work?</h3>
+          <p>Yes. He works remotely with clients worldwide and is currently available for new engagements. He typically responds to enquiries within one business day.</p>
+        </div>
+        <div class="faq__item rv">
+          <h3>How do you contact Alex Koziy?</h3>
+          <p>By email at info@alexkoziy.com, by booking a free 30-minute consultation call through the scheduling link on alexkoziy.com, or through his LinkedIn or Upwork profiles. Email and a booked call are the fastest routes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.footer-name::after {
-  content: "•";
-  margin: 0 6px;
-  opacity: 0.4;
-}
-.footer-name{
-	opacity:0.8;
-	font-weight:600;
-}
-</style>
-<footer class="site-footer">
-  <div class="footer-inline">
-    <span class="footer-name">© 2026 Alexander Koziy</span>
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div class="rv">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's talk about your AI or backend project</h2>
+          <p class="lead" style="margin-top:16px">
+            Tell me what you're building or what's breaking. If it isn't something I should take on,
+            I'll say so and point you somewhere better.
+          </p>
 
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/alex-koziy-526b3257/"
-       target="_blank"
-       rel="noopener"
-       aria-label="LinkedIn"
-       class="footer-icon footer-icon-linkedin">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
-        <rect x="2" y="9" width="4" height="12"/>
-        <circle cx="4" cy="4" r="2"/>
-      </svg>
-    </a>
+          <div class="contact__methods">
+            <a class="method" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3V7JCfEXgB9RWm0RUlyv6uiQxpczmkj5gUc7U9DvIT2xsqZN4mNHbBolgMISTyLfxACEfJIf9D" target="_blank" rel="noopener">
+              <span class="method__ico"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <span><b>Book a 30-minute call</b><span>Free consultation &middot; no obligation</span></span>
+            </a>
 
-    <!-- Upwork (Up) -->
-    <a href="https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/"
-       target="_blank"
-       rel="noopener"
-       aria-label="Upwork"
-       class="footer-icon footer-icon-upwork">
-      <svg viewBox="0 0 32 16" aria-hidden="true" style="margin-top: 5px;">
-        <text
-          x="0"
-          y="13"
-          font-size="14"
-          font-family="Inter, system-ui, -apple-system, sans-serif"
-          font-weight="600"
-          letter-spacing="0.2">
-          Up
-        </text>
-      </svg>
-    </a>
+            <a class="method" href="mailto:info@alexkoziy.com">
+              <span class="method__ico"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 7l10 6 10-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <span><b>info@alexkoziy.com</b><span>Direct email &mdash; fastest written route</span></span>
+            </a>
+
+            <a class="method" href="https://www.linkedin.com/in/alex-koziy-526b3257/" target="_blank" rel="noopener me" style="--brand:#0A66C2">
+              <span class="method__ico"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4z"/></svg></span>
+              <span><b>LinkedIn</b><span>Professional background &amp; network</span></span>
+            </a>
+
+            <a class="method" href="https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/" target="_blank" rel="noopener me" style="--brand:#14A800">
+              <span class="method__ico"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M18.6 6.4c-2.2 0-3.9 1.4-4.6 3.7-1-1.5-1.8-3.3-2.3-4.8H9.1v5.9c0 1.2-.9 2.1-2.1 2.1s-2.1-.9-2.1-2.1V5.3H2.4v5.9c0 2.6 2 4.6 4.6 4.6s4.6-2 4.6-4.6v-1c.5 1 1.1 2.1 1.8 3l-1.6 7.5h2.5l1.1-5.4c1 .6 2.1 1 3.2 1 2.7 0 4.9-2.2 4.9-5.1s-2.2-4.8-4.9-4.8zm0 7.4c-.9 0-1.8-.4-2.5-1l.2-1c.2-1.3.9-2.8 2.3-2.8 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4z"/></svg></span>
+              <span><b>Upwork</b><span>Contract through an escrow platform</span></span>
+            </a>
+
+            <a class="method" href="https://www.freelancer.com/" target="_blank" rel="noopener me" style="--brand:#29B2FE" data-pending="true">
+              <span class="method__ico"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M4.8 3h14.4l-2.9 4.4H9.6v2.9h5.6l-2.9 4.4H9.6V21H4.8z"/></svg></span>
+              <span><b>Freelancer.com</b><span>Bid-based projects and contests</span></span>
+            </a>
+
+            <a class="method" href="https://www.fiverr.com/" target="_blank" rel="noopener me" style="--brand:#1DBF73" data-pending="true">
+              <span class="method__ico"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M9.4 9V7.7A4.5 4.5 0 0114 3.2h2.4v3.4h-2.2a1.1 1.1 0 00-1.1 1.1V9h3.3v3.4h-3.3V21H9.4v-8.6H6.6V9z"/></svg></span>
+              <span><b>Fiverr</b><span>Fixed-scope packages</span></span>
+            </a>
+          </div>
+
+          <p class="note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Fastest response via call or email. I usually reply within one business day.
+          </p>
+        </div>
+
+        <div class="rv">
+          <div class="form" id="formWrap">
+            <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSejgqvqmP8uuG1uCYUC5l9UNk6dl654dqHYa_F3F5WY9SWEQA/formResponse" method="POST" target="hiddenFrame" novalidate>
+              <div class="form__row">
+                <div class="field">
+                  <label for="name">Full name <i aria-hidden="true">*</i></label>
+                  <input id="name" name="entry.1539748077" type="text" placeholder="Jane Doe" required autocomplete="name" />
+                  <span class="err">Please enter your name.</span>
+                </div>
+                <div class="field">
+                  <label for="email">Work email <i aria-hidden="true">*</i></label>
+                  <input id="email" name="entry.2084358838" type="email" placeholder="jane@company.com" required autocomplete="email" />
+                  <span class="err">Please enter a valid email address.</span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="company">Company / project</label>
+                <input id="company" name="entry.2089694982" type="text" placeholder="Acme Inc." autocomplete="organization" />
+              </div>
+
+              <div class="field">
+                <label for="topic">What do you need?</label>
+                <select id="topic" name="entry.1672738241">
+                  <option>AI / LLM project (Python, AWS)</option>
+                  <option>Python backend development</option>
+                  <option>AWS architecture &amp; cloud work</option>
+                  <option>Java / Spring Boot support</option>
+                  <option>ZK / Keikai enterprise reporting</option>
+                  <option>Dedicated team via Quontex</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Brief description <i aria-hidden="true">*</i></label>
+                <textarea id="message" name="entry.1864134205" placeholder="What are you building or improving? Any deadlines, constraints or existing stack I should know about?" required></textarea>
+                <span class="err">Please add a short description.</span>
+              </div>
+
+              <button class="btn btn--primary" type="submit">
+                Send message
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+              <p class="form__fine">I'll review your request and reply within one business day.</p>
+            </form>
+
+            <div class="ok" id="formOk" role="status" aria-live="polite">
+              <div class="ok__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#a3e635" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <h3>Thank you for your message</h3>
+              <p>I'll get back to you shortly — usually within one business day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-band rv">
+        <h2>Have an AI idea that needs to survive contact with production?</h2>
+        <p>That's the gap I work in — between an impressive demo and a system your business can actually depend on.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#contact">Start the conversation</a>
+          <a class="btn btn--ghost" href="mailto:info@alexkoziy.com">Email directly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__about">
+        <a class="brand" href="index.html">
+          <img src="images/logo_AK.png" alt="Alex Koziy monogram logo" width="32" height="32" />
+          <span><span class="brand__name">Alex Koziy</span><span class="brand__role">AI · Python · AWS</span></span>
+        </a>
+        <p>AI engineer working in Python and AWS, with 20+ years of enterprise Java/Spring Boot architecture behind it. Official ZK &amp; Keikai implementation partner.</p>
+        <div class="socials">
+          <a class="social social--linkedin" href="https://www.linkedin.com/in/alex-koziy-526b3257/" target="_blank" rel="noopener me" style="--brand:#0A66C2" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4z"/></svg></a>
+          <a class="social social--upwork" href="https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/" target="_blank" rel="noopener me" style="--brand:#14A800" aria-label="Upwork profile"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M18.6 6.4c-2.2 0-3.9 1.4-4.6 3.7-1-1.5-1.8-3.3-2.3-4.8H9.1v5.9c0 1.2-.9 2.1-2.1 2.1s-2.1-.9-2.1-2.1V5.3H2.4v5.9c0 2.6 2 4.6 4.6 4.6s4.6-2 4.6-4.6v-1c.5 1 1.1 2.1 1.8 3l-1.6 7.5h2.5l1.1-5.4c1 .6 2.1 1 3.2 1 2.7 0 4.9-2.2 4.9-5.1s-2.2-4.8-4.9-4.8zm0 7.4c-.9 0-1.8-.4-2.5-1l.2-1c.2-1.3.9-2.8 2.3-2.8 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4z"/></svg></a>
+          <a class="social social--freelancer" href="https://www.freelancer.com/" target="_blank" rel="noopener me" style="--brand:#29B2FE" aria-label="Freelancer.com profile" data-pending="true" title="Profile URL not set yet"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M4.8 3h14.4l-2.9 4.4H9.6v2.9h5.6l-2.9 4.4H9.6V21H4.8z"/></svg></a>
+          <a class="social social--fiverr" href="https://www.fiverr.com/" target="_blank" rel="noopener me" style="--brand:#1DBF73" aria-label="Fiverr profile" data-pending="true" title="Profile URL not set yet"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M9.4 9V7.7A4.5 4.5 0 0114 3.2h2.4v3.4h-2.2a1.1 1.1 0 00-1.1 1.1V9h3.3v3.4h-3.3V21H9.4v-8.6H6.6V9z"/></svg></a>
+          <a class="social" href="mailto:info@alexkoziy.com" style="--brand:#22d3ee" aria-label="Send an email"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 7l10 6 10-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__title">Explore</h2>
+        <ul>
+          <li><a href="#focus">AI Focus</a></li>
+          <li><a href="#about">Background</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="#engage">Engagement Models</a></li>
+          <li><a href="#at-a-glance">At a Glance</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2 class="footer__title">Elsewhere</h2>
+        <ul>
+          <li><a href="https://quontex.co/" target="_blank" rel="noopener">Quontex</a></li>
+          <li><a href="https://blog.zkoss.org/2025/12/12/featured-zk-keikai-partner-alex-k/" target="_blank" rel="noopener">ZK Partner Announcement</a></li>
+          <li><a href="mailto:info@alexkoziy.com">info@alexkoziy.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Alexander Koziy. All rights reserved.</p>
+      <p>AI &amp; Python · AWS · Java/Spring Boot · ZK &amp; Keikai</p>
+    </div>
   </div>
 </footer>
 
+<button class="totop" id="totop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
 
-
-
-
-
-
-
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
-  const navItems = navLinks.querySelectorAll("a");
-
-  function closeMenu() {
-    navLinks.classList.remove("active");
-    hamburger.textContent = "☰";
-  }
-
-  hamburger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const isOpen = navLinks.classList.toggle("active");
-    hamburger.textContent = isOpen ? "✕" : "☰";
-    console.log(isOpen);
-    console.log(hamburger.textContent);
-  });
-
-  navItems.forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".nav-container")) {
-      closeMenu();
-    }
-  });
-
-</script>
-
-
-  <script type="text/javascript">
-      jQuery(document).ready(function($) {
-          
-      	var $loading = $('<div class="loading"></div>');
-          
-          $(".default").each(function(){
-              var defaultVal = $(this).attr('title');
-              $(this).focus(function(){
-                  if ($(this).val() == defaultVal){
-                      $(this).removeClass('active').val('');
-                  }
-              });
-              $(this).blur(function() {
-                  if ($(this).val() == ''){
-                      $(this).addClass('active').val(defaultVal);
-                  }
-              })
-              .blur().addClass('active');
-          });
-          
-          $('#btn-submit').click(function(e){
-              var $formId = $(this).parents('form');
-              var formAction = $formId.attr('action');
-              defaulttextRemove();
-              var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-              $('div',$formId).removeClass('error');
-              $('span.error').remove();
-              $('.required',$formId).each(function(){
-                  var inputVal = $(this).val();
-                  var $parentTag = $(this).parent();
-                  if(inputVal == ''){
-                      $parentTag.addClass('error').append('<span style="display:none;" class="error">Required field</span>');
-                  }
-                  if($(this).hasClass('email') == true){
-                      if(!emailReg.test(inputVal)){
-                          $parentTag.addClass('error').append('<span style="display:none;" class="error">Enter a valid email address.</span>');
-                      }
-                  }
-              });
-              if ($('span.error').length == "0") {
-                  $formId.append($loading.clone());
-                  $('div',$formId).hide();
-                  $( "#hidden_iframe" ).css( "display", "table" );
-                  $.post(formAction, $formId.serialize(),function(data){
-                      $('.loading').remove();
-                      $formId.append(data).fadeIn();
-                  });
-              }
-              e.preventDefault();
-          });
-      });
-      function defaulttextRemove(){
-          $('.default').each(function(){
-              var defaultVal = $(this).attr('title');
-              if ($(this).val() == defaultVal){
-                  $(this).val('');
-              }
-          });
-      }
-    </script>
+<iframe name="hiddenFrame" id="hiddenFrame" style="display:none" title="Form submission target"></iframe>
+<script src="js/main.js" defer></script>
+<script src="js/agent-loader.js" defer></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPFLLNJFNH"></script>
 <script>
@@ -1088,5 +1319,6 @@
 
   gtag('config', 'G-LPFLLNJFNH');
 </script>
+
 </body>
 </html>

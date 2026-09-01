@@ -1,0 +1,5 @@
+User-agent: Googlebot
+
+Disallow:
+
+Host: www.alexkoziy.com

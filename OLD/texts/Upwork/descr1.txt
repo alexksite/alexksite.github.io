@@ -1,0 +1,28 @@
+Senior Java/Spring Boot Developer 
+$40.00/hr 
+
+I help companies build, fix, and scale Spring Boot REST API backends in real production systems.
+
+With 20+ years of commercial Java experience, I specialize in:
+
+Designing and implementing REST APIs with Spring Boot
+
+Fixing legacy and poorly performing backend code
+
+Database performance tuning (PostgreSQL, Oracle, MySQL, SQL Server)
+
+API integrations with third-party systems
+
+Troubleshooting production issues and stabilizing systems
+
+Refactoring monoliths into clean, maintainable architectures
+
+I work comfortably with existing enterprise codebases where documentation is missing and problems must be solved fast.
+
+Tech stack
+Java • Spring Boot • Spring Framework • Hibernate/JPA • REST • OpenAPI/Swagger
+PostgreSQL • Oracle • SQL Server • MySQL
+AWS • Azure • GCP
+Grafana • Prometheus • CI/CD • Monitoring & observability
+
+If your Spring Boot backend needs to be fixed, extended, integrated, or optimized — I can help.

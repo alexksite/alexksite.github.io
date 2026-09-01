@@ -1,0 +1,9 @@
+I’m a Senior Java Developer with 20+ years of commercial experience building and maintaining enterprise web applications. I specialize in Spring Boot backend (REST API, Data Persistence, etc.). I work comfortably with existing enterprise codebases where documentation is missing and problems must be solved fast.
+
+Tech stack
+Java • Spring Boot • Spring Framework • Hibernate/JPA • REST • OpenAPI/Swagger
+PostgreSQL • Oracle • SQL Server • MySQL
+AWS • Azure • GCP
+Grafana • Prometheus • CI/CD • Monitoring & observability
+
+If your Spring Boot backend needs to be fixed, extended, integrated, or optimized — I can help.
