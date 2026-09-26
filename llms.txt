@@ -67,7 +67,7 @@ Pay-once-for-development (the bot is yours, source code and all), low running co
 
 ## Exclusive zero-cost hosting offer (selective)
 
-For selected projects, Alex extends an exclusive offer: a zero-cost hosting setup on a free-tier cloud, plus months of premium multi-model AI access included. It is offered case by case, not to every client. Prospects are invited to describe their bot to find out if it qualifies.
+For selected projects, Alex extends an exclusive offer: a zero-cost hosting setup on a free-tier cloud, plus premium multi-model AI access included. It is offered case by case, not to every client. Prospects are invited to describe their bot to find out if it qualifies.
 
 ## Finance / trading / crypto
 
