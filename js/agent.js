@@ -388,6 +388,17 @@
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
+  // Turn bare http(s) URLs in already-escaped text into clickable links that
+  // open in a new tab. Trailing sentence punctuation is kept out of the link.
+  function linkify(escaped) {
+    return String(escaped).replace(/https?:\/\/[^\s<)]+/g, function (url) {
+      var trail = "";
+      var m = url.match(/[.,);:]+$/);
+      if (m) { trail = url.slice(url.length - m[0].length); url = url.slice(0, url.length - m[0].length); }
+      return '<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>' + trail;
+    });
+  }
+
   function ctaHtml() {
     return '<div class="akcta">' +
       '<a class="p" href="' + EMAIL + '">Email Alex</a>' +
@@ -509,7 +520,7 @@
   function answerFor(result) {
     if (result.status === "hit") {
       var e = result.hit.doc.e;
-      var html = esc(e.a);
+      var html = linkify(esc(e.a));
       if (e.defer) {
         /* deferred answers: show the answer text only, no contact prompt */
       } else if (e.soft) {
