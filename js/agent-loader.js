@@ -16,7 +16,8 @@
     loading = true;
 
     var s = document.createElement("script");
-    s.src = "js/agent.js";
+    // Versioned so a new build is fetched instead of a stale cached copy.
+    s.src = "js/agent.js?v=20260926c";
     s.async = true;
     s.onload = function () {
       loaded = true;

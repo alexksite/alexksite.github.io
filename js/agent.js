@@ -363,6 +363,28 @@
     '.akf button:disabled{opacity:.4;cursor:not-allowed}',
     '.akf button svg{width:17px;height:17px}',
     '.aknote{margin-top:9px;font-size:.685rem;color:#6a7382;text-align:center;line-height:1.4}',
+    /* Full-panel list of all common questions (shown first, and via the tab) */
+    '.akq{position:absolute;left:0;right:0;top:65px;bottom:64px;z-index:3;background:#0f1117;',
+    'display:flex;flex-direction:column;overflow:hidden}',
+    '.akq__hd{flex:none;padding:15px 16px 10px;font-size:.82rem;color:#8b93a3;',
+    'border-bottom:1px solid rgba(255,255,255,.06)}',
+    '.akq__hd b{display:block;color:#e9ebf1;font-size:.98rem;font-weight:640;margin-bottom:2px}',
+    '.akq__list{flex:1 1 auto;min-height:0;overflow-y:auto;padding:8px;display:flex;',
+    'flex-direction:column;gap:6px;scrollbar-width:thin}',
+    '.akq__list::-webkit-scrollbar{width:7px}',
+    '.akq__list::-webkit-scrollbar-thumb{background:#1a1e28;border-radius:4px}',
+    '.akq__item{text-align:left;padding:11px 13px;border-radius:11px;border:1px solid rgba(255,255,255,.09);',
+    'background:rgba(255,255,255,.03);color:#dfe3ec;font-size:.86rem;line-height:1.4;cursor:pointer;',
+    'font-family:inherit;transition:background .18s,border-color .18s,transform .18s}',
+    '.akq__item:hover{background:rgba(255,255,255,.08);border-color:rgba(34,211,238,.4);transform:translateX(2px)}',
+    '.akq__item span{color:#22d3ee;margin-right:8px;font-weight:700}',
+    /* Subtle toggle tab at the bottom that re-opens the questions list */
+    '.akqtab{flex:none;display:flex;align-items:center;justify-content:center;gap:7px;',
+    'padding:9px 14px;background:#14171f;border-top:1px solid rgba(255,255,255,.08);',
+    'color:#8b93a3;font-size:.78rem;font-family:inherit;cursor:pointer;width:100%;border:0;',
+    'border-bottom:1px solid rgba(255,255,255,.06);transition:color .2s,background .2s}',
+    '.akqtab:hover{color:#e9ebf1;background:#171b24}',
+    '.akqtab svg{width:14px;height:14px}',
     '@media (max-width:620px){.akw{right:12px;left:12px;bottom:78px;width:auto;',
     'height:calc(100vh - 96px);max-height:calc(100vh - 96px);',
     'height:calc(100dvh - 96px);max-height:calc(100dvh - 96px)}}',
@@ -375,6 +397,31 @@
     "Show me a live bot",
     "How much does a bot cost to run?",
     "How do we start?"
+  ];
+
+  // The full list of common questions, shown as a full-panel menu on first
+  // open and whenever the visitor taps the "Browse common questions" tab.
+  var QUESTIONS = [
+    "How much does a chatbot cost?",
+    "How much does hosting cost per month?",
+    "Will you support us after installation?",
+    "Do I own the bot and the source code?",
+    "Which channels do you support?",
+    "Can the bot use AI like ChatGPT or Claude?",
+    "Can you build a WhatsApp bot?",
+    "Can you build an Instagram bot?",
+    "Can the bot connect to my CRM or database?",
+    "How long does it take to build?",
+    "Can I see a live bot?",
+    "Why not just use ManyChat or a no-code builder?",
+    "Is there a free hosting offer?",
+    "Can the bot speak other languages?",
+    "Can a human take over from the bot?",
+    "How do we start?",
+    "How reliable is the bot?",
+    "Can you build a bot for trading or finance?",
+    "How do I contact you?",
+    "What happens if my traffic grows?"
   ];
 
   function h(tag, cls, html) {
@@ -430,8 +477,24 @@
     el.body.setAttribute("aria-atomic", "false");
     el.panel.appendChild(el.body);
 
-    el.chips = h("div", "akchips");
-    el.panel.appendChild(el.chips);
+    // Subtle toggle tab that re-opens the full questions list.
+    el.qtab = h("button", "akqtab",
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M8 10h8M8 14h5M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>' +
+      '<span>Browse common questions</span>');
+    el.qtab.type = "button";
+    el.qtab.addEventListener("click", showQuestions);
+    el.panel.appendChild(el.qtab);
+
+    // Full-panel questions menu (hidden until shown).
+    el.qpanel = h("div", "akq");
+    el.qpanel.style.display = "none";
+    el.qpanel.appendChild(h("div", "akq__hd",
+      "<b>What would you like to know?</b>Pick a question, or type your own below."));
+    el.qlist = h("div", "akq__list");
+    el.qpanel.appendChild(el.qlist);
+    el.panel.appendChild(el.qpanel);
 
     var ft = h("div", "akw__ft");
     var form = h("form", "akf");
@@ -477,21 +540,40 @@
     });
 
     document.addEventListener("keydown", function (ev) {
-      if (ev.key === "Escape" && state.open) { close(); }
+      if (ev.key === "Escape" && state.open) {
+        if (el.qpanel && el.qpanel.style.display !== "none") { hideQuestions(); }
+        else { close(); }
+      }
     });
 
-    renderChips(SUGGESTIONS);
+    buildQuestionList();
   }
 
-  function renderChips(list) {
-    el.chips.innerHTML = "";
-    list.forEach(function (q) {
-      var b = h("button", null, esc(q));
+  // Fill the full-panel menu with every common question, once.
+  function buildQuestionList() {
+    if (!el.qlist || el.qlist.childElementCount) return;
+    QUESTIONS.forEach(function (q) {
+      var b = h("button", "akq__item", "<span>›</span>" + esc(q));
       b.type = "button";
       b.addEventListener("click", function () { submit(q); });
-      el.chips.appendChild(b);
+      el.qlist.appendChild(b);
     });
   }
+
+  function showQuestions() {
+    if (!el.qpanel) return;
+    el.qpanel.style.display = "flex";
+    el.qlist.scrollTop = 0;
+    if (el.qtab) el.qtab.style.display = "none";
+  }
+
+  function hideQuestions() {
+    if (el.qpanel) el.qpanel.style.display = "none";
+    if (el.qtab) el.qtab.style.display = "flex";
+  }
+
+  // Kept for compatibility with older calls; chips are no longer rendered.
+  function renderChips() {}
 
   function scroll() {
     el.body.scrollTop = el.body.scrollHeight;
@@ -560,6 +642,7 @@
     text = String(text || "").trim();
     if (!text || state.busy) return;
 
+    hideQuestions();
     user(text);
     el.input.value = "";
     el.input.style.height = "auto";
@@ -616,6 +699,11 @@
       state.open = true;
       el.panel.classList.add("on");
       greet();
+      // On the very first open, present the full list of common questions.
+      if (!state.questionsShownOnce) {
+        state.questionsShownOnce = true;
+        showQuestions();
+      }
       setTimeout(function () { el.input.focus(); }, 240);
       var btn = document.getElementById("ak-launch");
       if (btn) btn.setAttribute("aria-expanded", "true");
@@ -653,7 +741,7 @@
   function loadKB(bust) {
     if (index) return Promise.resolve(true);
     if (kbPromise && !bust) return kbPromise;
-    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "");
+    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "?v=20260926c");
     kbPromise = fetch(url, { cache: bust ? "reload" : "default" })
       .then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
