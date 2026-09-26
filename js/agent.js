@@ -335,9 +335,12 @@
     '.akcta{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}',
     '.akcta a{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:999px;',
     'font-size:.8rem;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}',
-    '.akcta a:hover{transform:translateY(-1px)}',
-    '.akcta a.p{background:linear-gradient(135deg,#22d3ee,#8b5cf6);color:#05060a}',
-    '.akcta a.s{background:rgba(255,255,255,.06);color:#e9ebf1;border:1px solid rgba(255,255,255,.16)}',
+    '.akcta a:hover{transform:translateY(-1px);filter:brightness(1.08)}',
+    '.akcta a svg{width:15px;height:15px;flex:none}',
+    '.akcta a.tg{background:#229ED9;color:#fff}',
+    '.akcta a.wa{background:#25D366;color:#04310f}',
+    '.akcta a.vb{background:#7360F2;color:#fff}',
+    '.akcta a.em{background:rgba(255,255,255,.08);color:#e9ebf1;border:1px solid rgba(255,255,255,.18)}',
     '.akchips{display:flex;flex-wrap:nowrap;gap:6px;padding:8px 14px;flex:0 0 auto;',
     'overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;',
     'border-top:1px solid rgba(255,255,255,.06);-webkit-overflow-scrolling:touch}',
@@ -450,11 +453,15 @@
   }
 
   function ctaHtml() {
+    var tgIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3l-3.3 15.6c-.2 1-.9 1.3-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6 12.9l-4.7-1.5c-1-.3-1-1 .2-1.5L20.6 2.7c.9-.3 1.6.2 1.3 1.6z"/></svg>';
+    var waIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.7 15l-1.3 4.8 5-1.3A10 10 0 1012 2zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .3-3.3-.7-2.8-1.2-4.5-4-4.6-4.2-.2-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.3 1.4 2.6 1.6.2.1.4.1.6-.1l.7-.9c.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.9-.1 1.5z"/></svg>';
+    var vbIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C7 2 3 5.6 3 10c0 2.4 1.2 4.6 3.1 6v3.5l3.2-1.8c.9.2 1.8.3 2.7.3 5 0 9-3.6 9-8s-4-8-9-8zm0 14.4c-.8 0-1.6-.1-2.4-.3l-.5-.1-2 1.1v-2.1l-.4-.3C8.9 13.6 8 11.9 8 10c0-3.1 1.8-5.6 4-5.6s4 2.5 4 5.6-1.8 5.6-4 5.6z"/></svg>';
+    var emIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6" stroke-linecap="round"/></svg>';
     return '<div class="akcta">' +
-      '<a class="p" href="' + TELEGRAM + '" target="_blank" rel="noopener">Telegram</a>' +
-      '<a class="s" href="' + WHATSAPP + '" target="_blank" rel="noopener">WhatsApp</a>' +
-      '<a class="s" href="' + VIBER + '">Viber</a>' +
-      '<a class="s" href="' + EMAIL + '">Email</a>' +
+      '<a class="tg" href="' + TELEGRAM + '" target="_blank" rel="noopener">' + tgIcon + 'Telegram</a>' +
+      '<a class="wa" href="' + WHATSAPP + '" target="_blank" rel="noopener">' + waIcon + 'WhatsApp</a>' +
+      '<a class="vb" href="' + VIBER + '">' + vbIcon + 'Viber</a>' +
+      '<a class="em" href="' + EMAIL + '">' + emIcon + 'Email</a>' +
       "</div>";
   }
 
@@ -746,7 +753,7 @@
   function loadKB(bust) {
     if (index) return Promise.resolve(true);
     if (kbPromise && !bust) return kbPromise;
-    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "?v=20260926e");
+    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "?v=20260926f");
     kbPromise = fetch(url, { cache: bust ? "reload" : "default" })
       .then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
