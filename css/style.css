@@ -324,7 +324,7 @@ p { text-wrap: pretty; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding: clamp(60px, 9vw, 108px) 0 clamp(56px, 7vw, 86px);
+  padding: clamp(24px, 4vw, 48px) 0 clamp(56px, 7vw, 86px);
   overflow: hidden;
   isolation: isolate;
 }
