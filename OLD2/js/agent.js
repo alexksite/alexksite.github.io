@@ -77,7 +77,7 @@
     spring: ["boot", "java"], springboot: ["spring", "boot", "java"],
     jvm: ["java"], j2ee: ["java"], jakarta: ["java"],
     price: ["cost", "rate"], pricing: ["cost", "rate", "price"],
-    cost: ["price"], rates: ["rate", "price", "cost"],
+    cost: ["price", "rate"], rates: ["rate", "price", "cost"],
     rate: ["price", "cost"], fee: ["price", "cost", "rate"],
     fees: ["price", "cost", "rate"], charge: ["price", "cost", "rate"],
     quote: ["price", "cost", "estimate"], budget: ["price", "cost"],
@@ -109,8 +109,7 @@
   /* Light, deliberately consistent stemmer. Correctness matters less than
      applying the identical transform to queries and documents. */
   var PROTECT = new Set(["aws", "ai", "api", "css", "js", "sql", "ios", "less", "class",
-    "was", "has", "his", "this", "its", "yes", "gis", "cms", "ops", "rss", "ss",
-    "hosting"]);
+    "was", "has", "his", "this", "its", "yes", "gis", "cms", "ops", "rss", "ss"]);
 
   function stem(w) {
     if (w.length <= 3 || PROTECT.has(w)) return w;
@@ -293,10 +292,8 @@
   var state = { open: false, ready: false, busy: false, lastFocus: null };
 
   var STYLE = [
-    '.akw{position:fixed;right:22px;bottom:84px;z-index:120;width:min(392px,calc(100vw - 32px));',
-    'height:min(600px,calc(100vh - 104px));max-height:calc(100vh - 104px);',
-    'height:min(600px,calc(100dvh - 104px));max-height:calc(100dvh - 104px);',
-    'display:flex;flex-direction:column;',
+    '.akw{position:fixed;right:22px;bottom:88px;z-index:120;width:min(392px,calc(100vw - 32px));',
+    'max-height:min(620px,calc(100vh - 130px));display:flex;flex-direction:column;',
     'background:#0f1117;border:1px solid rgba(255,255,255,.14);border-radius:20px;',
     'box-shadow:0 40px 80px -24px rgba(0,0,0,.85);overflow:hidden;',
     'font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;',
@@ -314,14 +311,12 @@
     'background:rgba(255,255,255,.04);color:#b3bac7;cursor:pointer;font-size:1rem;line-height:1;',
     'display:grid;place-items:center;transition:background .2s,color .2s}',
     '.akw__x:hover{background:rgba(255,255,255,.1);color:#fff}',
-    '.akw__bd{flex:1 1 auto;min-height:90px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;',
-    'padding:16px;display:flex;flex-direction:column;gap:12px;scrollbar-width:thin}',
+    '.akw__bd{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:16px;display:flex;',
+    'flex-direction:column;gap:12px;scrollbar-width:thin}',
     '.akw__bd::-webkit-scrollbar{width:7px}',
     '.akw__bd::-webkit-scrollbar-thumb{background:#1a1e28;border-radius:4px}',
     '.akm{max-width:88%;font-size:.885rem;line-height:1.6;padding:11px 14px;border-radius:14px;',
-    'white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere;word-break:break-word;',
-    'animation:akin .26s cubic-bezier(.22,1,.36,1)}',
-    '.akm a{overflow-wrap:anywhere;word-break:break-all}',
+    'white-space:pre-wrap;word-wrap:break-word;animation:akin .26s cubic-bezier(.22,1,.36,1)}',
     '@keyframes akin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}',
     '.akm--b{align-self:flex-start;background:#181c26;color:#dfe3ec;border:1px solid rgba(255,255,255,.07);',
     'border-bottom-left-radius:5px}',
@@ -335,14 +330,10 @@
     '.akcta a:hover{transform:translateY(-1px)}',
     '.akcta a.p{background:linear-gradient(135deg,#22d3ee,#8b5cf6);color:#05060a}',
     '.akcta a.s{background:rgba(255,255,255,.06);color:#e9ebf1;border:1px solid rgba(255,255,255,.16)}',
-    '.akchips{display:flex;flex-wrap:nowrap;gap:6px;padding:8px 14px;flex:0 0 auto;',
-    'overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;',
-    'border-top:1px solid rgba(255,255,255,.06);-webkit-overflow-scrolling:touch}',
-    '.akchips::-webkit-scrollbar{height:5px}',
-    '.akchips::-webkit-scrollbar-thumb{background:#1a1e28;border-radius:4px}',
-    '.akchips button{padding:6px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.13);',
-    'background:rgba(255,255,255,.035);color:#b3bac7;font-size:.75rem;cursor:pointer;white-space:nowrap;',
-    'flex:0 0 auto;font-family:inherit;transition:all .2s}',
+    '.akchips{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 12px;flex:none}',
+    '.akchips button{padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.13);',
+    'background:rgba(255,255,255,.035);color:#b3bac7;font-size:.775rem;cursor:pointer;',
+    'font-family:inherit;transition:all .2s}',
     '.akchips button:hover{background:rgba(255,255,255,.09);color:#e9ebf1;border-color:rgba(255,255,255,.28)}',
     '.akdots{align-self:flex-start;display:flex;gap:4px;padding:13px 15px;background:#181c26;',
     'border-radius:14px;border-bottom-left-radius:5px;border:1px solid rgba(255,255,255,.07)}',
@@ -363,18 +354,17 @@
     '.akf button:disabled{opacity:.4;cursor:not-allowed}',
     '.akf button svg{width:17px;height:17px}',
     '.aknote{margin-top:9px;font-size:.685rem;color:#6a7382;text-align:center;line-height:1.4}',
-    '@media (max-width:620px){.akw{right:12px;left:12px;bottom:78px;width:auto;',
-    'height:calc(100vh - 96px);max-height:calc(100vh - 96px);',
-    'height:calc(100dvh - 96px);max-height:calc(100dvh - 96px)}}',
+    '@media (max-width:620px){.akw{right:12px;left:12px;bottom:80px;width:auto;',
+    'max-height:calc(100vh - 110px)}}',
     '@media (prefers-reduced-motion:reduce){.akw,.akm,.akdots i{animation:none!important;transition:none!important}}'
   ].join("");
 
   var SUGGESTIONS = [
-    "What does Alex build?",
-    "Which channels do you support?",
-    "Show me a live bot",
-    "How much does a bot cost to run?",
-    "How do we start?"
+    "What does Alex do now?",
+    "Which AWS services does he use?",
+    "Show me a case study",
+    "How do I hire him?",
+    "What are your rates?"
   ];
 
   function h(tag, cls, html) {
@@ -407,7 +397,7 @@
     var hd = h("div", "akw__hd");
     hd.appendChild(h("div", "akw__av", "AK"));
     hd.appendChild(h("div", "akw__ti",
-      "<b>Ask about the chatbots</b><span>Answers from this site &middot; no data leaves your browser</span>"));
+      "<b>Ask about Alex</b><span>Answers from this site &middot; no data leaves your browser</span>"));
     el.close = h("button", "akw__x", "&times;");
     el.close.setAttribute("aria-label", "Close chat");
     hd.appendChild(el.close);
@@ -511,7 +501,7 @@
       var e = result.hit.doc.e;
       var html = esc(e.a);
       if (e.defer) {
-        /* deferred answers: show the answer text only, no contact prompt */
+        html += "\n\n<b>Alex will know this exactly.</b> Worth asking him directly:" + ctaHtml();
       } else if (e.soft) {
         html += "\n\nHappy to help with anything about his work though — the AI and " +
           "Python/AWS practice, his Java and ZK background, the case studies, or how to hire him.";
@@ -529,10 +519,12 @@
       };
     }
 
-    // Nothing close enough — say so plainly, without pushing contact prompts.
+    // Nothing close enough — defer to the owner rather than guess.
     return {
-      html: "That's outside what this website covers, so I don't have a reliable answer for it. " +
-        "Try one of the questions below, or rephrase what you're looking for.",
+      html: "That's outside what this website covers, so anything I said would be a guess — " +
+        "and I'd rather not guess about someone else's work.\n\n" +
+        "<b>Alex knows the answer to this exactly.</b> The quickest way is to ask him directly:" +
+        ctaHtml(),
       chips: SUGGESTIONS
     };
   }
@@ -556,47 +548,27 @@
     el.send.disabled = true;
 
     var d = dots();
-
-    function finish() {
+    // Short, fixed delay: enough for the exchange to read as a conversation,
+    // not long enough to feel like waiting. The search itself is ~1ms.
+    setTimeout(function () {
       d.remove();
-      var res = search(text);
+      var res = index ? search(text) : { status: "none", hits: [] };
       var a = answerFor(res);
       bot(a.html);
       renderChips(a.chips.slice(0, 4));
       state.busy = false;
       el.send.disabled = false;
       scroll();
-    }
-
-    function fail() {
-      d.remove();
-      bot("I'm having trouble loading my answers right now. Please refresh the page and try " +
-        "again — or email <a href=\"" + EMAIL + "\">info@alexkoziy.com</a>.");
-      renderChips(SUGGESTIONS.slice(0, 4));
-      state.busy = false;
-      el.send.disabled = false;
-      scroll();
-    }
-
-    // The knowledge base loads asynchronously. If it isn't ready yet (or a
-    // previous load failed), wait for it / retry before answering — never
-    // answer "not found" just because the data hasn't arrived.
-    if (index) {
-      setTimeout(finish, 280);
-    } else {
-      loadKB(true).then(function () {
-        setTimeout(finish, 120);
-      }).catch(fail);
-    }
+    }, 280);
   }
 
   /* ------------------------------------------------------------- lifecycle */
   function greet() {
     if (el.body.childElementCount) return;
-    bot("Hi — I answer questions about <b>Alex Koziy's chatbots</b> using this site's content.\n\n" +
-      "Ask about what he builds, which channels he supports (WhatsApp, Instagram, Telegram, web), " +
-      "the live bots you can try, cost and hosting, or how to start. If it's not published here, " +
-      "I'll say so and point you to him.");
+    bot("Hi — I answer questions about <b>Alex Koziy</b> using this site's content.\n\n" +
+      "Ask about his AI work in Python and AWS, his Java and ZK background, the case " +
+      "studies, or how to hire him. If it's not published here, I'll say so and point " +
+      "you to him.");
   }
 
   function open() {
@@ -635,35 +607,24 @@
     _ready: function () { return state.ready; }
   };
 
-  // Load (or reload) the knowledge base. Returns a promise so callers can
-  // wait for it. A cache-busting query is used on retries so a stale or broken
-  // cached copy can never permanently break the widget.
-  var kbPromise = null;
-  function loadKB(bust) {
-    if (index) return Promise.resolve(true);
-    if (kbPromise && !bust) return kbPromise;
-    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "");
-    kbPromise = fetch(url, { cache: bust ? "reload" : "default" })
-      .then(function (r) {
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        return r.json();
-      })
-      .then(function (data) {
-        index = buildIndex(data.kb);
-        state.ready = true;
-        document.dispatchEvent(new CustomEvent("ak:ready", { detail: { entries: data.kb.length } }));
-        return true;
-      })
-      .catch(function (err) {
-        state.ready = false;
-        kbPromise = null; // allow a later retry
-        document.dispatchEvent(new CustomEvent("ak:error"));
-        throw err;
-      });
-    return kbPromise;
-  }
-
-  loadKB(false);
+  fetch(KB_URL, { cache: "force-cache" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      index = buildIndex(data.kb);
+      state.ready = true;
+      document.dispatchEvent(new CustomEvent("ak:ready", { detail: { entries: data.kb.length } }));
+    })
+    .catch(function () {
+      state.ready = false;
+      if (state.open) {
+        bot("I couldn't load my knowledge base just now. Alex can answer anything you need " +
+          "directly:" + ctaHtml());
+      }
+      document.dispatchEvent(new CustomEvent("ak:error"));
+    });
 
   if (window.__akAutoOpen) open();
 })();

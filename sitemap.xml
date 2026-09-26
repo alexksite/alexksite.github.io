@@ -5,30 +5,48 @@
 
   <url>
     <loc>https://www.alexkoziy.com/</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.alexkoziy.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alexkoziy.com/" />
     <image:image>
       <image:loc>https://www.alexkoziy.com/images/og-image.jpg</image:loc>
-      <image:title>Alex Koziy — AI Engineer (Python and AWS)</image:title>
-      <image:caption>Alex Koziy builds AI systems in Python on AWS, backed by 20+ years of enterprise Java architecture.</image:caption>
+      <image:title>Alex Koziy — Custom Python Chatbot Developer</image:title>
+      <image:caption>Alex Koziy builds and supports custom Python chatbots for WhatsApp, Instagram, Telegram and web.</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://www.alexkoziy.com/case-studies.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.alexkoziy.com/case-studies.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alexkoziy.com/case-studies.html" />
     <image:image>
       <image:loc>https://www.alexkoziy.com/images/og-image.jpg</image:loc>
-      <image:title>Case studies — Alex Koziy</image:title>
-      <image:caption>Nine engineering case studies across AI, finance, government, industry, transportation, real estate and ERP.</image:caption>
+      <image:title>Chatbot case studies — Alex Koziy</image:title>
+      <image:caption>Live Python chatbots and the business bots Alex Koziy builds for WhatsApp, Instagram, Telegram and web.</image:caption>
     </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.alexkoziy.com/enterprise.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alexkoziy.com/enterprise.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alexkoziy.com/enterprise.html" />
+  </url>
+
+  <url>
+    <loc>https://www.alexkoziy.com/java-zk.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alexkoziy.com/java-zk.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alexkoziy.com/java-zk.html" />
   </url>
 
 </urlset>

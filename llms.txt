@@ -1,197 +1,112 @@
-# Alex Koziy — AI Engineer (Python & AWS), Java/Spring Boot Architect
+# Alex Koziy — Custom Python Chatbot Developer
 
-> Alexander (Alex) Koziy is a software engineer who builds production AI systems in Python on Amazon Web Services. For the last two years his work has focused on AI engineering — retrieval-augmented generation, LLM services and agent workflows. That sits on more than 20 years of enterprise Java and Spring Boot architecture experience. He is a recognised official ZK and Keikai implementation partner, works remotely with clients worldwide, and engages either directly as an independent specialist or as engagement manager for Quontex dedicated development teams.
+> Alexander (Alex) Koziy builds and supports custom chatbots in Python for business — for WhatsApp, Instagram Direct, Telegram and websites. The bots handle customer support, FAQs, lead capture, orders and bookings; can use AI (Claude, OpenAI) with a rule-based fallback and human handoff; run on the client's own cloud account (AWS, Google Cloud, a small VPS or another host) for a low monthly cost; and the client owns the source code. For selected projects he also offers an exclusive zero-cost hosting setup on a free-tier cloud. He also develops applications in the finance area and has a personal interest in trading and cryptocurrency. Backing the chatbot work is 20+ years of enterprise software engineering (Java, Spring Boot, ZK, Keikai).
 
 Canonical site: https://www.alexkoziy.com/
 Contact: info@alexkoziy.com
-Last updated: 2026-08-31
+Last updated: 2026-09-26
 
 ## Key facts
 
 - **Name:** Alexander (Alex) Koziy
-- **Current focus:** AI engineering with Python and AWS (last 2 years)
-- **Core experience:** 20+ years, Java and Spring Boot enterprise architecture
-- **AI stack:** Python, FastAPI, RAG, LLM agents, Amazon Bedrock, Lambda, OpenSearch
-- **Enterprise stack:** Java, Spring Boot, Hibernate, ZK 3–10, Keikai, SQL databases
-- **Credential:** Official ZK & Keikai implementation partner
-- **Industries:** Finance, government, industrial, transportation, real estate, ERP/CRM
-- **Engagement models:** Direct as an independent specialist, or a dedicated team via Quontex
-- **Clients & partners:** PwC, Stratifytech, Dynamic Inventory
+- **What he does:** Custom Python chatbot development for business
+- **Channels:** WhatsApp, Instagram Direct, Telegram, website widgets
+- **Tech:** Python 3.12, FastAPI, Meta Cloud API, Telegram Bot API, Claude / OpenAI, rule-based dialog, nginx, systemd
+- **Ownership:** Client receives the full source code and owns the data
+- **Hosting:** Low monthly cost on the client's own cloud (AWS, Google Cloud, VPS or other); optional zero-cost free-tier setup for selected projects
+- **AI:** Optional AI conversations with rule-based fallback and human handoff
+- **Finance niche:** Builds finance-area apps; follows trading and crypto (education, not advice)
+- **Background:** 20+ years enterprise Java / Spring Boot; official ZK & Keikai partner
 - **Location:** Remote, working with clients worldwide
-- **Availability:** Open to new engagements; replies within 1 business day
+- **Availability:** Open to new bot projects; replies within 1 business day
 - **Contact:** info@alexkoziy.com
 
 ## Positioning
 
-Most AI projects do not fail on the model. They fail on integration, data access, permissions, cost, and nobody being able to explain why the output changed. Those are enterprise backend problems. Alex Koziy's differentiator is combining current AI/Python/AWS practice with two decades of experience making enterprise systems observable, secure and maintainable — so the AI he ships is production-grade rather than a demo. His particular niche is adding AI to ERP, CRM and finance platforms that already work, without destabilising the system paying the bills.
+No-code chatbot builders (ManyChat, SendPulse and similar) charge subscriptions that grow with your audience, limit you to preset blocks, and keep your data on their servers. Alex's custom Python bots flip that: flat, tiny hosting at any volume, unlimited custom logic, direct integration with your CRM, database and payment tools, reliability under load, full AI integration on your terms, and — most importantly — you own the source code and the data. The bots are built to be supported: health checks, monitoring, and ongoing maintenance rather than a hand-off-and-vanish delivery.
 
 ## Services
 
-### AI & LLM Engineering
+### Custom chatbot development
+WhatsApp, Instagram, Telegram and web bots in Python for support, FAQs, lead capture, orders and bookings.
+Keywords: Python chatbot, WhatsApp bot, Instagram bot, Telegram bot, FastAPI
 
-Design and delivery of production AI features: retrieval-augmented generation pipelines, prompt and context design, tool-calling agents, guardrails, evaluation harnesses and token/latency cost control.
+### AI chatbot with human handoff
+Natural AI conversations (Claude, OpenAI) with a rule-based fallback and instant handoff to a person.
+Keywords: AI chatbot, Claude, OpenAI, rule-based fallback, human handoff
 
-Keywords: RAG, LLM, AI agents, prompt engineering, AI evaluation, guardrails
+### Multi-channel deployment
+One bot serving WhatsApp, Instagram Direct, Telegram and website from a single codebase.
+Keywords: multi-channel, omnichannel, WhatsApp, Instagram, Telegram, web widget
 
-### Python Backend Development
+### Integration
+Direct links to CRM, databases (PostgreSQL, MySQL, MongoDB) and payment tools — no Zapier/Make middle-layer.
+Keywords: CRM integration, database, payment, REST API, webhook
 
-Asynchronous Python services built with FastAPI and Pydantic, using a clear service/repository structure, typed code and automated tests.
+### Support & maintenance
+Monitoring, health checks and content updates; unanswered questions logged so the bot keeps improving.
+Keywords: chatbot support, maintenance, monitoring, uptime
 
-Keywords: Python, FastAPI, Pydantic, async, pytest, REST API
+## Live bots (try them)
 
-### AWS Cloud Architecture
+### WhatsApp Trading FAQ Bot
+A rule-based WhatsApp assistant that teaches trading concepts, indicators and risk management, with optional AI mentor mode and human handoff. Runs on a small, low-cost cloud instance. Educational only — no buy/sell advice.
+- Try: https://wa.me/+380998780590
+- Code: https://github.com/alexksoft/Trading-FAQ-bot
+- Portfolio: https://www.freelancer.com/portfolio-items/11605487-trading-faq-bot
 
-Serverless and container architecture on AWS, including Amazon Bedrock and SageMaker integration, Lambda, API Gateway, S3, DynamoDB, OpenSearch, Step Functions and ECS/Fargate, provisioned as infrastructure as code with least-privilege IAM.
+### Orion Restaurant Instagram Bot
+An AI-powered Instagram Direct assistant for a restaurant: menu consultation, FAQs and order help, with rule-based fallback and manager handoff. The AI replies in whatever language the customer writes in, so it is not limited to a single language.
+- See: https://www.instagram.com/orion_restau/
+- Code: https://github.com/alexksoft/orion-instagram-direct-chatbot
+- Portfolio: https://www.freelancer.com/portfolio-items/11582496-instagram-direct-chatbot-with-ai
 
-Keywords: AWS, Amazon Bedrock, Lambda, SageMaker, OpenSearch, serverless, IAM
+## What every project includes
 
-### Java & Spring Boot Development
+Pay-once-for-development (the bot is yours, source code and all), low running cost on the client's own cloud, one-click scaling on a real cloud platform, and ongoing support and maintenance after launch.
 
-REST API development, legacy system modernization, JVM profiling and performance optimization for mission-critical enterprise applications, based on more than 20 years of Java experience.
+## Exclusive zero-cost hosting offer (selective)
 
-Keywords: Java, Spring Boot, Hibernate, legacy modernization, JVM performance
+For selected projects, Alex extends an exclusive offer: a zero-cost hosting setup on a free-tier cloud, plus months of premium multi-model AI access included. It is offered case by case, not to every client. Prospects are invited to describe their bot to find out if it qualifies.
 
-### ZK Framework & Keikai Enterprise Reporting
+## Finance / trading / crypto
 
-Implementation, migration and custom component development across ZK versions 3 to 10, and Keikai integration for spreadsheet-driven enterprise reporting. Recognised official ZK and Keikai implementation partner.
+Alex develops applications in the finance area and follows trading and cryptocurrency closely, so he is a strong fit for bots in that domain — proven by the live WhatsApp Trading FAQ bot. These bots educate (concepts, indicators, risk); they do not give buy/sell signals, predictions or financial advice.
 
-Keywords: ZK Framework, Keikai, enterprise reporting, spreadsheet, ZK migration
+## Background (secondary to the chatbot work)
 
-### Dedicated Development Teams via Quontex
-
-Structuring and launching dedicated development teams for enterprise projects on behalf of Quontex, covering presales consulting, engagement setup, delivery coordination and long-term partnership management.
-
-Keywords: dedicated development team, staff augmentation, enterprise delivery
-
-## Technology
-
-- **AI/LLM:** RAG, embeddings, vector search, reranking, tool-calling agents, guardrails, prompt and context design, evaluation harnesses, LangChain
-- **Python:** Python 3.12, FastAPI, Pydantic, asyncio, pytest
-- **AWS:** Amazon Bedrock, AWS Lambda, Amazon SageMaker, Amazon OpenSearch Service, Amazon S3, Amazon DynamoDB, AWS Step Functions, Amazon API Gateway, ECS/Fargate, CloudWatch, IAM, infrastructure as code
-- **Java:** Java, Spring Boot, Hibernate, REST API design, JVM profiling, microservices
-- **Enterprise UI:** ZK Framework versions 3 through 10, Keikai spreadsheet components, custom ZK components
-- **Data:** MySQL, PostgreSQL, PostGIS, Microsoft SQL Server, Oracle Database
-- **Other:** Docker, containerization, OpenLayers
-
-## Case studies
-
-### 1. AI & RAG Engineering for Enterprise Data
-
-Making private enterprise data usable through large language models: document ingestion and chunking, embeddings and vector search, grounded generation with citations, and agent workflows that call real business systems, deployed on AWS with cost and latency budgets enforced in code.
-
-- Technologies: Python, FastAPI, Amazon Bedrock, AWS Lambda, Amazon OpenSearch, Amazon S3, Amazon DynamoDB, AWS Step Functions, Docker
-- Domain: Cross-industry; ERP, CRM, finance and document-heavy operations
-
-### 2. Financial Planning & Analysis Platform
-
-A platform that consolidates complex financial and operational data so organizations can generate custom reports, visualize trends and make data-driven decisions across multiple business units. Keikai integration enabled custom reporting and streamlined financial analysis.
-
-- Technologies: Spring Boot, ZK Framework, Keikai, AWS
-- Domain: Finance; enterprise and public-sector organizations in the USA
-
-### 3. Dynamic Public Safety
-
-Law enforcement software built from the ground up to support complex criminal justice workflows, including case management, reporting and data exchange between multiple agencies. Improved UI responsiveness and scalability for statewide deployments.
-
-- Technologies: Java, ZK Framework, MySQL, Hibernate, Apache Tomcat
-- Domain: Government and public safety; law enforcement agencies in the USA
-
-### 4. CCS — Contract Control Suite
-
-A contract management system centralizing lease agreements, approvals, document storage and audit trails, with document previews, approval workflows and fine-grained access control. Increased contract transparency and reduced manual errors.
-
-- Technologies: Java, ZK Framework, Microsoft SQL Server, Hibernate, Apache Tomcat
-- Domain: Enterprise and finance; multi-department usage
-
-### 5. Dynamic Inventory
-
-An inventory system enabling companies to track products, suppliers, purchases and sales from a single interface, with reusable ZK UI components and optimized database queries for large datasets. Delivered real-time stock visibility across departments.
-
-- Technologies: Java, ZK Framework, MySQL, Hibernate, Apache Tomcat
-- Domain: E-commerce and ERP
-
-### 6. Energy Management & Control System
-
-A system for collecting, processing and visualizing energy consumption data to support management decision-making, with dashboards and reporting tools that helped enterprises identify inefficiencies and reduce operational costs.
-
-- Technologies: Java, ZK Framework, MySQL, Hibernate, Apache Tomcat
-- Domain: Industrial and energy analytics
-
-### 7. Interactive Map for Transportation Company
-
-A real-time vehicle tracking solution visualizing live locations and historical routes on an interactive map, enabling transportation companies to monitor fleet activity efficiently. Improved fleet visibility and operational control.
-
-- Technologies: Java, ZK Framework, OpenLayers, PostgreSQL/PostGIS, Apache Tomcat
-- Domain: Transportation and logistics; GIS
-
-### 8. Management System for Real Estate Agencies
-
-A management platform helping real estate agencies handle leads, properties, clients, appointments and reporting in a single system, centralizing client and property management.
-
-- Technologies: Java, ZK Framework, MySQL, Hibernate, Apache Tomcat
-- Domain: Real estate and CRM
-
-### 9. Adempiere WebUI Integration with Compiere
-
-Integration of Adempiere WebUI with Compiere to create a unified ERP solution offering extended functionality beyond the capabilities of either system individually, expanding ERP functionality without replacing the existing system.
-
-- Technologies: Java, ZK Framework, Oracle Database, JBoss, Compiere, Adempiere
-- Domain: ERP integration; enterprise
-
-Full detail: https://www.alexkoziy.com/case-studies.html
-
-## Engagement models
-
-1. **Direct — independent specialist.** Hire Alex Koziy directly as a senior AI, Python, AWS or Java specialist. Best suited to adding AI features to an existing product, proving out an AI use case before committing a team, expert support for existing applications, architecture and modernization work, and long-term maintenance ownership.
-2. **Dedicated team via Quontex.** He structures and launches dedicated development teams for enterprise projects on behalf of Quontex (https://quontex.co/), covering presales consulting, engagement setup, delivery coordination and long-term partnership management. Best suited to greenfield enterprise development, rapidly scaling delivery capacity, and long-term product partnerships.
-
-## Credentials
-
-- Official ZK & Keikai implementation partner, recognised by ZK (Potix Corporation). Announcement: https://blog.zkoss.org/2025/12/12/featured-zk-keikai-partner-alex-k/
-- 20+ years delivering enterprise web applications
-- Clients and partners include PwC, Stratifytech and Dynamic Inventory
+- **Enterprise (Java / Spring Boot):** 20+ years delivering enterprise platforms across finance, government, industrial, transportation, real estate and ERP. Detail: https://www.alexkoziy.com/enterprise.html
+- **ZK & Keikai:** Recognised official ZK & Keikai implementation partner; ZK versions 3–10, custom components, migrations, and Keikai spreadsheet reporting. Detail: https://www.alexkoziy.com/java-zk.html
+- ZK partner announcement: https://blog.zkoss.org/2025/12/12/featured-zk-keikai-partner-alex-k/
 
 ## FAQ
 
-### Who is Alex Koziy?
+### What does Alex Koziy build?
+Custom chatbots in Python for business — WhatsApp, Instagram Direct, Telegram and websites — for support, FAQs, lead capture, orders and bookings, with optional AI and human handoff.
 
-Alex Koziy (Alexander Koziy) is a software engineer who builds AI systems in Python on Amazon Web Services. He has more than 20 years of experience in enterprise Java and Spring Boot architecture, and for the last two years his work has focused on AI engineering. He is a recognised official ZK and Keikai implementation partner and works with clients worldwide on a remote basis.
+### Which channels do the chatbots work on?
+WhatsApp (Meta Cloud API, Twilio or 360dialog), Instagram Direct, Telegram, and your own website, often from one codebase.
 
-### What is Alex Koziy working on now?
+### Why custom Python instead of a no-code builder?
+No monthly platform tax that grows with your audience, any logic you can describe, direct integrations, reliability under load, full AI integration, and you own the code and data.
 
-For the past two years Alex Koziy has worked on AI engineering using Python and AWS. That includes retrieval-augmented generation (RAG) over private enterprise document sets, LLM-backed services, agent workflows that call real business systems, and the evaluation and cost controls needed to run them safely in production.
+### Can the chatbot use AI like ChatGPT or Claude?
+Yes — Claude and OpenAI integration with a rule-based fallback so the bot never goes silent.
 
-### What AI services does Alex Koziy provide?
+### Do I own the chatbot and its data?
+Yes. Full source code, running on your own cloud account, so customer data stays with you.
 
-He provides retrieval-augmented generation pipelines including document ingestion, chunking strategy, embeddings and vector search; LLM services and tool-calling agent workflows with guardrails, retries and human-in-the-loop checkpoints; AWS-native AI architecture; evaluation harnesses with token, latency and spend budgets; and integration of AI into existing ERP, CRM and finance platforms.
+### How much does it cost to run?
+Running costs stay low — the bot deploys to the client's preferred cloud (AWS, Google Cloud, a small VPS or other) and runs on modest resources, typically a few dollars a month. You pay once for development. A zero-cost free-tier hosting setup is available as an exclusive offer for selected projects.
 
-### Which AWS services does he use to build AI systems?
+### What happens after launch?
+Health checks, monitoring and ongoing support and maintenance; unanswered questions are logged so the bot improves.
 
-Amazon Bedrock for model access, AWS Lambda and Amazon ECS/Fargate for compute, Amazon API Gateway for interfaces, Amazon S3 for document storage, Amazon DynamoDB for state, Amazon OpenSearch Service for vector search, AWS Step Functions for orchestration, and Amazon SageMaker where custom models are needed. Infrastructure is provisioned as code with least-privilege IAM.
+### Can you build a chatbot for trading or finance?
+Yes — Alex builds finance-area apps and has a live trading-education bot. These bots educate; they do not give financial advice.
 
-### Does Alex Koziy still work with Java and Spring Boot?
-
-Yes. Java and Spring Boot remain part of his practice, particularly for legacy modernization, REST API development, JVM profiling and performance optimization, and for adding AI capabilities to existing Java enterprise systems without destabilising them. The AI work is an addition to that foundation, not a replacement for it.
-
-### What is his experience with ZK Framework and Keikai?
-
-He has worked with the ZK Framework across every major generation from version 3 through version 10, including custom component development and phased migrations. Over the last five years he has integrated Keikai into enterprise applications to deliver spreadsheet-based business solutions such as custom reporting and financial analysis. He is a recognised official ZK and Keikai implementation partner.
-
-### What industries has Alex Koziy built software for?
-
-Finance and financial planning and analysis, government and public safety, industrial and energy management, transportation and fleet tracking, real estate, and enterprise ERP, CRM and e-commerce systems. Delivered platforms include financial planning and analysis tools, law enforcement case management, contract management, inventory management, energy monitoring and real-time fleet mapping.
-
-### How can you hire Alex Koziy?
-
-There are two engagement models. You can hire him directly as an independent senior specialist for AI, Python, AWS or Java work, which suits adding AI features to an existing product, architecture and modernization work, and long-term maintenance. Alternatively he can arrange a dedicated development team through Quontex, which suits greenfield enterprise projects and rapidly scaling delivery capacity.
-
-### Is Alex Koziy available for remote work?
-
-Yes. He works remotely with clients worldwide and is currently available for new engagements. He typically responds to enquiries within one business day.
-
-### How do you contact Alex Koziy?
-
-By email at info@alexkoziy.com, by booking a free 30-minute consultation call through the scheduling link on alexkoziy.com, or through his LinkedIn or Upwork profiles. Email and a booked call are the fastest routes.
+### How do you start?
+Book a free 30-minute call or email info@alexkoziy.com with what the bot should do, on which channel, and what it should connect to.
 
 ## Contact
 
@@ -199,13 +114,15 @@ By email at info@alexkoziy.com, by booking a free 30-minute consultation call th
 - Book a free 30-minute consultation: scheduling link on https://www.alexkoziy.com/#contact
 - LinkedIn: https://www.linkedin.com/in/alex-koziy-526b3257/
 - Upwork: https://www.upwork.com/o/profiles/users/_~01f9faec8be1f2a5f2/
-- Also reachable on Freelancer.com, Fiverr (profile links on the website)
-- Availability: open to new engagements, remote worldwide, replies within 1 business day
+- GitHub: https://github.com/alexksoft
+- Availability: open to new bot projects, remote worldwide, replies within 1 business day
 
 ## Pages
 
-- [Home](https://www.alexkoziy.com/): positioning, AI focus, background timeline, expertise pillars, engagement models, at-a-glance facts, FAQ, contact
-- [Case Studies](https://www.alexkoziy.com/case-studies.html): nine case studies with technology stack, impact and domain for each
+- [Home](https://www.alexkoziy.com/): chatbot services, live bots, why custom vs no-code, launch offer, how it works, finance niche, FAQ, contact
+- [Chatbot Case Studies](https://www.alexkoziy.com/case-studies.html): live bots plus the business bot types Alex builds
+- [Enterprise Background](https://www.alexkoziy.com/enterprise.html): 20+ years of Java/Spring Boot enterprise work
+- [ZK & Keikai](https://www.alexkoziy.com/java-zk.html): ZK 3–10 and Keikai, official partner credential
 
 ## Usage
 
