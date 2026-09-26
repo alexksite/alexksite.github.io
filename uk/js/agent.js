@@ -115,7 +115,29 @@
     "was", "has", "his", "this", "its", "yes", "gis", "cms", "ops", "rss", "ss",
     "hosting"]);
 
+  // Common Ukrainian inflectional endings, longest first, so different word
+  // forms in the query and the knowledge base collapse to the same stem
+  // (e.g. "боти", "бота", "ботів" -> "бот"; "коштує", "коштувати" -> "кошт").
+  var UK_ENDINGS = ["ерувати","увати","ювати","ерами","ями","ами","ості","ність",
+    "ення","ання","ити","іти","ати","яти","увати","еться","ється","ються","атися",
+    "ими","іми","ого","ому","ій","их","ах","ям","ях","ів","ев","ов","ем","ей","ою","ею",
+    "и","а","я","е","є","у","ю","о","і","ї","й","ь"];
+
+  function isCyrillic(w) { return /[а-щьюяєіїґ]/i.test(w); }
+
+  function stemUk(w) {
+    if (w.length <= 4) return w;
+    for (var i = 0; i < UK_ENDINGS.length; i++) {
+      var e = UK_ENDINGS[i];
+      if (w.length - e.length >= 3 && w.slice(-e.length) === e) {
+        return w.slice(0, w.length - e.length);
+      }
+    }
+    return w;
+  }
+
   function stem(w) {
+    if (isCyrillic(w)) return stemUk(w);
     if (w.length <= 3 || PROTECT.has(w)) return w;
     if (w.length > 4 && /ies$/.test(w)) w = w.slice(0, -3) + "y";
     else if (/[^s]s$/.test(w)) w = w.slice(0, -1);
@@ -126,8 +148,9 @@
 
   function tokenize(text, expand) {
     var raw = String(text).toLowerCase()
-      .replace(/[’']/g, "")
-      .replace(/[^a-z0-9+#]+/g, " ")
+      .replace(/[’'ʼ]/g, "")
+      // Keep Latin, Cyrillic and digits (plus + and #). Everything else -> space.
+      .replace(/[^a-z0-9а-щьюяєіїґ+#]+/gi, " ")
       .trim();
     if (!raw) return [];
 
@@ -211,7 +234,7 @@
     var unknown = uniq.filter(function (t) { return index.idf[t] === undefined; });
     var informativeTotal = informative.length + unknown.length;
 
-    var qLower = " " + String(query).toLowerCase().replace(/[^a-z0-9+# ]+/g, " ").replace(/\s+/g, " ").trim() + " ";
+    var qLower = " " + String(query).toLowerCase().replace(/[^a-z0-9а-щьюяєіїґ+# ]+/gi, " ").replace(/\s+/g, " ").trim() + " ";
 
     var scored = index.docs.map(function (d) {
       var score = 0, matched = 0, matchedInf = 0, matchedTopical = 0;
@@ -753,7 +776,7 @@
   function loadKB(bust) {
     if (index) return Promise.resolve(true);
     if (kbPromise && !bust) return kbPromise;
-    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "?v=20260926f");
+    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "?v=20260926g");
     kbPromise = fetch(url, { cache: bust ? "reload" : "default" })
       .then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
