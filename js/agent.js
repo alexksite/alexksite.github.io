@@ -20,8 +20,8 @@
   var EMAIL = "mailto:info@alexkoziy.com?subject=Enquiry%20from%20alexkoziy.com";
   var BOOKING = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3V7JCfEXgB9RWm0RUlyv6uiQxpczmkj5gUc7U9DvIT2xsqZN4mNHbBolgMISTyLfxACEfJIf9D";
   var TELEGRAM = "https://t.me/Cozy_Al";
-  var WHATSAPP = "https://wa.me/38075436652";
-  var VIBER = "viber://chat?number=%2B38075436652";
+  var WHATSAPP = "https://wa.me/380975436652";
+  var VIBER = "viber://chat?number=%2B380975436652";
 
   /* ---------------------------------------------------------------- tuning */
   // Retrieval thresholds, calibrated against a fixed question battery.
@@ -746,7 +746,7 @@
   function loadKB(bust) {
     if (index) return Promise.resolve(true);
     if (kbPromise && !bust) return kbPromise;
-    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "?v=20260926d");
+    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "?v=20260926e");
     kbPromise = fetch(url, { cache: bust ? "reload" : "default" })
       .then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
