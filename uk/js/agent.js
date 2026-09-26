@@ -776,7 +776,7 @@
   function loadKB(bust) {
     if (index) return Promise.resolve(true);
     if (kbPromise && !bust) return kbPromise;
-    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "?v=20260926g");
+    var url = KB_URL + (bust ? ("?v=" + Date.now()) : "?v=20260926h");
     kbPromise = fetch(url, { cache: bust ? "reload" : "default" })
       .then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
