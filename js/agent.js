@@ -398,7 +398,7 @@
   ].join("");
 
   var SUGGESTIONS = [
-    "What does Alex build?",
+    "What do I build?",
     "Which channels do you support?",
     "Show me a live bot",
     "How much does a bot cost to run?",
