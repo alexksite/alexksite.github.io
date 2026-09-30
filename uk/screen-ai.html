@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>On-Screen AI Tutor for Coding and Quizzes | Alex Koziy</title>
+<meta name="description" content="On-Screen AI Tutor for Coding and Quizzes — десктопний AI-помічник від Alex Koziy: плаваюча кнопка, що в один клік читає ваш екран через Claude Haiku (vision) і пояснює відповідь із відсотком впевненості або підказує підхід до коду. Демонстрація Vision AI та десктоп-розробки." />
+<meta name="author" content="Alexander Koziy" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://www.alexkoziy.com/UK/screen-ai.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Alex Koziy" />
+<meta property="og:url" content="https://www.alexkoziy.com/UK/screen-ai.html" />
+<meta property="og:title" content="On-Screen AI Tutor for Coding and Quizzes" />
+<meta property="og:description" content="Десктопний AI-помічник, що в один клік читає екран і пояснює відповідь або підказує підхід до коду — на Python і Claude Haiku vision." />
+<meta property="og:image" content="https://www.alexkoziy.com/images/og-image.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="On-Screen AI Tutor for Coding and Quizzes" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="On-Screen AI Tutor for Coding and Quizzes" />
+<meta name="twitter:description" content="Десктопний AI-помічник, що читає екран і допомагає вчитися швидше — Python + Claude Haiku vision." />
+<meta name="twitter:image" content="https://www.alexkoziy.com/images/og-image.jpg" />
+<meta name="theme-color" content="#08090d" />
+<meta name="keywords" content="AI помічник екрана, десктопний AI, Claude Haiku vision, скріншот AI, помічник для навчання, Python десктоп додаток, комп'ютерний зір, AI-репетитор" />
+<meta property="og:locale" content="uk_UA" />
+<link rel="alternate" hreflang="en" href="https://www.alexkoziy.com/screen-ai.html" />
+<link rel="alternate" hreflang="uk" href="https://www.alexkoziy.com/UK/screen-ai.html" />
+
+<link rel="icon" href="images/logo_AK32x29.png" sizes="32x32" />
+<link rel="icon" href="images/logo_AK16x14.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="images/logo_AK180x164.png" />
+<link rel="manifest" href="site.webmanifest" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.alexkoziy.com/UK/screen-ai.html#webpage",
+      "url": "https://www.alexkoziy.com/UK/screen-ai.html",
+      "name": "On-Screen AI Tutor for Coding and Quizzes",
+      "description": "Десктопний AI-помічник для навчання й роботи, що в один клік читає екран через Claude Haiku vision і пояснює відповідь або підказує підхід до коду. Демонстрація Vision AI та десктоп-розробки від Alex Koziy.",
+      "inLanguage": "uk",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.alexkoziy.com/UK/screen-ai.html#app",
+      "name": "On-Screen AI Tutor for Coding and Quizzes",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Windows, macOS, Linux (десктоп)",
+      "description": "Легка плаваюча десктопна кнопка, що на вимогу знімає екран і надсилає його до Claude Haiku (vision), аби пояснити запитання з відсотком впевненості або окреслити підхід до коду. Створено як помічник для навчання, брейнштормінгу та продуктивності.",
+      "creator": { "@id": "https://www.alexkoziy.com/#person" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="index.html" aria-label="Alex Koziy — головна">
+      <img src="images/logo_AK.png" alt="Монограма-логотип Alex Koziy" width="32" height="32" />
+      <span>
+        <span class="brand__name">Alex Koziy</span>
+        <span class="brand__role">Python чат-боти · WhatsApp · Instagram · Telegram</span>
+      </span>
+    </a>
+
+    <div class="nav__links">
+      <a href="index.html#services">Послуги</a>
+      <a href="index.html#live-bots">Живі боти</a>
+      <a href="case-studies.html">Кейси</a>
+      <a href="screen-ai.html" class="is-active">AI-репетитор</a>
+      <a href="index.html#contact">Контакти</a>
+    </div>
+
+    <div class="nav__cta">
+      <a class="btn btn--primary btn--sm" href="index.html#contact">Замовити бота</a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer">
+  <a href="index.html">Головна (чат-боти)</a>
+  <a href="index.html#services">Послуги</a>
+  <a href="case-studies.html">Кейси</a>
+  <a href="screen-ai.html">AI-репетитор</a>
+  <a href="index.html#contact">Контакти</a>
+  <a class="btn btn--primary" href="index.html#contact">Замовити бота</a>
+</div>
+
+<main id="main">
+
+  <header class="phead">
+    <div class="phead__glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Хлібні крихти">
+        <a href="index.html">Головна</a><span aria-hidden="true">/</span><span>On-Screen AI Tutor</span>
+      </nav>
+      <h1>On-Screen <span class="grad-text">AI Tutor</span> — для навчання й коду</h1>
+      <p class="lead" style="margin-top:20px;max-width:70ch">
+        Невеликий десктопний застосунок, який я створив: він тримає плаваючу кнопку поверх будь-якого вікна.
+        Один клік — і він читає те, що на екрані, через <strong>Claude Haiku vision</strong>, а потім пояснює
+        відповідь із <strong>відсотком впевненості</strong> або окреслює підхід до коду. Без копіювання в чат
+        і перемикання вкладок. Це помічник для навчання, брейнштормінгу й продуктивності — і водночас
+        демонстрація моєї роботи з Vision AI та десктоп-застосунками.
+      </p>
+      <div class="hero__actions" style="margin-top:24px">
+        <a class="btn btn--ghost" href="index.html">← Назад до чат-ботів</a>
+        <a class="btn btn--ghost" href="#video">Переглянути демо</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:clamp(24px,3vw,40px)">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Як це працює</p>
+        <h2>Один клік. Він розуміє ваш екран.</h2>
+        <p class="lead">Дві кнопки плавають поверх усього. Кожна знімає екран і надсилає зображення до Claude Haiku, яка читає контекст і відповідає — швидко й дешево, бо Haiku оптимізована саме для цього.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card card--pillar rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <h3>Пояснити й перевірити себе</h3>
+          <p>На тесті чи навчальному запитанні один клік знімає екран і повертає найімовірнішу відповідь <strong>з відсотком впевненості</strong> та коротким поясненням — щоб ви перевірили власне мислення, а не просто списали.</p>
+        </article>
+
+        <article class="card card--pillar rv">
+          <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M3 16v3a2 2 0 002 2h3M16 21h3a2 2 0 002-2v-3M9 9l2 2-2 2M13 15h2"/></svg></div>
+          <h3>Зрозуміти задачу з коду</h3>
+          <p>На задачі з програмування друга кнопка читає умову прямо із зображення й повертає <strong>розбір підходу та приклад розв'язку</strong> з оцінкою складності — спосіб вивчити патерн без перемикання на чат.</p>
+        </article>
+      </div>
+
+      <div class="disclaimer" style="margin-top:22px">
+        Це <b>інструмент для навчання та продуктивності</b> — щоб перевіряти власну роботу, долати «затички» й
+        досліджувати альтернативні підходи. Будь ласка, користуйтеся ним відповідально й у межах правил будь-якого
+        іспиту, курсу чи оцінювання, у якому берете участь.
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="tech">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow">Як це збудовано</p>
+        <h2>Стек за цим</h2>
+        <p class="lead">Легкий десктопний оверлей плюс мультимодальна модель — компактно, швидко й дешево в роботі.</p>
+      </div>
+
+      <div class="split">
+        <ul class="feature-list rv">
+          <li>
+            <h3>Плаваючий десктопний оверлей</h3>
+            <p>Вікно «завжди зверху» з двома кнопками на Python, що сидить поверх будь-якого застосунку, не заважаючи.</p>
+          </li>
+          <li>
+            <h3>Знімок екрана в один клік</h3>
+            <p>Знімає поточний екран на вимогу (mss / Pillow) і надсилає зображення — без ручного копіювання й перепечатування запитань.</p>
+          </li>
+          <li>
+            <h3>Claude Haiku vision</h3>
+            <p>Використовує Claude Haiku від Anthropic для мультимодального розуміння — обрана за швидкість і низьку вартість, ідеальна для швидких підказок з екрана.</p>
+          </li>
+          <li>
+            <h3>Прозорий результат</h3>
+            <p>Повертає відповідь із відсотком впевненості та коротким поясненням, тож результат можна перевірити, а не приймати «наосліп».</p>
+          </li>
+        </ul>
+
+        <div class="rv">
+          <div class="panel">
+            <div class="panel__bar">
+              <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+              <em>ai-tutor · потік</em>
+            </div>
+<pre><code><span class="tc"># Один клік → екран → відповідь</span>
+<span class="ts">1.</span> зняти поточний екран  <span class="tc"># mss / Pillow</span>
+<span class="ts">2.</span> надіслати зображення → Claude Haiku (vision)
+<span class="ts">3.</span> модель читає контекст екрана
+<span class="ts">4.</span> повернути:
+     answer = "Варіант B"
+     conf   = 0.96
+     reason = "…коротке пояснення…"
+<span class="tc"># Режим коду повертає підхід + приклад + O(n)</span>
+</code></pre>
+          </div>
+          <div class="chips" style="margin-top:20px">
+            <span class="chip chip--py">Python</span>
+            <span class="chip chip--ai">Claude Haiku</span>
+            <span class="chip chip--ai">Vision / мультимодальність</span>
+            <span class="chip">Знімок екрана</span>
+            <span class="chip">Десктопний оверлей</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="video">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="eyebrow">Демо</p>
+        <h2>Подивіться в дії</h2>
+        <p class="lead">Короткий огляд: клік, знімок, відповідь — із показаним відсотком впевненості.</p>
+      </div>
+      <div class="rv" style="max-width:760px;margin-inline:auto">
+        <div class="panel">
+          <div class="panel__bar">
+            <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+            <em>демо</em>
+          </div>
+          <div style="aspect-ratio:16/9;display:grid;place-items:center;color:var(--muted);font-size:.95rem;padding:24px;text-align:center">
+            Відео-демо незабаром.<br />Хочете додати його сюди? Можу вбудувати огляд із YouTube або MP4.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="cta-band rv">
+        <h2>Потрібен кастомний AI-інструмент для десктопа або асистент, що бачить екран?</h2>
+        <p>Цей інструмент показує, як я поєдную Vision AI з легким десктопним застосунком. Якщо хочете щось подібне для свого робочого процесу — напишіть.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="index.html#contact">Зв'язатися</a>
+          <a class="btn btn--ghost" href="index.html">Назад до чат-ботів</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__bottom" style="border-top:0">
+      <p>© 2026 Alexander Koziy. Усі права захищено.</p>
+      <p><a href="index.html">Головна</a> · <a href="case-studies.html">Кейси чат-ботів</a> · <a href="enterprise.html">Досвід</a> · <a href="../screen-ai.html">English</a> · <a href="mailto:info@alexkoziy.com">info@alexkoziy.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Нагору">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script src="js/main.js" defer></script>
+<script src="js/agent-loader.js?v=20260926i" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPFLLNJFNH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LPFLLNJFNH');
+</script>
+</body>
+</html>

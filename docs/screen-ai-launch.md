@@ -1,10 +1,14 @@
-# ScreenPilot — naming, positioning & video scripts
+# On-Screen AI Tutor — naming, positioning & video scripts
 
 Marketing kit for the desktop AI screen-assistant (the two-button floating app
 that captures the screen and asks Claude Haiku vision to explain a quiz answer
 with a confidence score, or outline a coding approach).
 
-Page for it: `screen-ai.html`.
+Page for it: `screen-ai.html` (EN) and `UK/screen-ai.html` (UK).
+
+Current product name used on the site: **On-Screen AI Tutor for Coding and
+Quizzes**. Note: "ScreenPilot" is NOT used — it is taken by another project.
+The name options below are only ideas; verify availability before adopting any.
 
 ---
 
@@ -24,8 +28,8 @@ exam/course" line (already on the page).
 
 ## Name ideas
 
-**App name (recommended): ScreenPilot** — implies a light co-pilot over your
-screen. Other options:
+**Current name (on the site): "On-Screen AI Tutor for Coding and Quizzes."**
+Other ideas to explore (check availability first — do not assume any is free):
 - OverlayAI — emphasises the floating overlay.
 - ContextAI / SnapSolve — emphasises one-click screen understanding.
 - AI Vision Desktop — emphasises Claude's multimodal vision.
