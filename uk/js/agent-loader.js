@@ -35,7 +35,7 @@
   btn.id = "ak-launch";
   btn.className = "ak-launch";
   btn.type = "button";
-  btn.setAttribute("aria-label", "Запитати про чат-боти Alex Koziy");
+  btn.setAttribute("aria-label", "Запитати про чат-боти Олександра");
   btn.setAttribute("aria-expanded", "false");
   btn.setAttribute("aria-controls", "ak-agent");
   btn.innerHTML =

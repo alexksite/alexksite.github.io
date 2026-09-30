@@ -495,7 +495,7 @@
     el.panel.id = "ak-agent";
     el.panel.setAttribute("role", "dialog");
     el.panel.setAttribute("aria-modal", "false");
-    el.panel.setAttribute("aria-label", "Запитати про Alex Koziy");
+    el.panel.setAttribute("aria-label", "Запитати про Олександра");
 
     var hd = h("div", "akw__hd");
     hd.appendChild(h("div", "akw__av", "AK"));
@@ -548,7 +548,7 @@
     form.appendChild(el.send);
     ft.appendChild(form);
     ft.appendChild(h("div", "aknote",
-      "Працює офлайн у вашому браузері. Щодо того, чого тут немає, джерело — сам Alex."));
+      "Працює офлайн у вашому браузері. Щодо того, чого тут немає, джерело — сам Олександр."));
     el.panel.appendChild(ft);
 
     document.body.appendChild(el.panel);
@@ -722,7 +722,7 @@
   /* ------------------------------------------------------------- lifecycle */
   function greet() {
     if (el.body.childElementCount) return;
-    bot("Вітаю — я відповідаю на запитання про <b>чат-боти Alex Koziy</b> за вмістом цього сайту.\n\n" +
+    bot("Вітаю — я відповідаю на запитання про <b>чат-боти Олександра</b> за вмістом цього сайту.\n\n" +
       "Запитайте, що він створює, які канали підтримує (WhatsApp, Instagram, Telegram, веб), " +
       "про живих ботів, які можна спробувати, вартість і хостинг чи як почати. Якщо цього тут немає, " +
       "я так і скажу й скерую до нього.");
