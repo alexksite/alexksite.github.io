@@ -287,12 +287,28 @@
 
 <script src="js/main.js" defer></script>
 <script src="js/agent-loader.js?v=20260926i" defer></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPFLLNJFNH"></script>
+  <!-- Google Analytics — loaded lazily (first interaction or idle) so it never blocks page load -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LPFLLNJFNH');
+  (function () {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    var loaded = false;
+    function loadGA() {
+      if (loaded) return; loaded = true;
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-LPFLLNJFNH";
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-LPFLLNJFNH');
+    }
+    ["pointerdown","keydown","scroll","touchstart"].forEach(function (e) {
+      window.addEventListener(e, loadGA, { once: true, passive: true });
+    });
+    if ("requestIdleCallback" in window) { requestIdleCallback(loadGA, { timeout: 6000 }); }
+    else { setTimeout(loadGA, 4000); }
+  })();
 </script>
 </body>
 </html>
